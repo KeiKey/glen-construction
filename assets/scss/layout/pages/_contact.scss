@@ -1,0 +1,449 @@
+@use '../../utils/' as * ;
+
+/*============= CONTACT CSS AREA ===============*/
+.contact1 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .contact-widget-area {
+        .contact-boxarea {
+            position: relative;
+            z-index: 1;
+            .input-area {
+                margin-top: 16px;
+                input {
+                    color: var(--ztc-text-text-2);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-8);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    &::placeholder {
+                        color: var(--ztc-text-text-3);
+                        font-family:var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s18);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 18px; 
+                    } 
+                }
+                .nice-select {
+                    color: var(--ztc-text-text-3);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-8);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    height: auto;
+                    border: none;
+                    box-shadow: none;
+                    &::after {
+                        height: 7px;
+                        width: 7px;
+                        right: 16px;
+                    }
+                    ul {
+                        width: 100%;
+                    }
+                }
+
+                textarea {
+                    color: var(--ztc-text-text-2);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-8);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    height: 140px;
+                    &::placeholder {
+                        color: var(--ztc-text-text-3);
+                        font-family:var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s18);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 18px; 
+                    } 
+                }
+                button {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .contact-maps-area {
+        iframe {
+            width: 100%;
+            border-radius: 8px;
+            height: 698px;
+            @media #{$xs} {
+                height: 300px;
+                margin-top: 30px;
+            }
+            @media #{$md} {
+                height: 400px;
+                margin-top: 30px;
+            }
+            @media #{$lg} {
+                height: 400px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+// Inner Pages //
+.contact-inenr-area {
+    position: relative;
+    z-index: 1;
+    .contact-heading {
+        .calnow-boxes {
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            background: var(--ztc-bg-bg-4);
+            padding: 32px;
+            margin-top: 30px;
+            transition: all .4s;
+            display: flex;
+            align-items: center;
+            &:hover {
+                transform: translateY(-10px);
+                transition: all .4s;
+                .icons {
+                    transform: rotateY(-180deg);
+                    transition: all .4s;
+                }
+            }
+            .icons {
+                height: 60px;
+                width: 60px;
+                display: inline-block;
+                transition: all .4s;
+                background: var(--ztc-bg-bg-1);
+                transition: all .4s;
+                text-align: center;
+                border-radius: 50%;
+                line-height: 60px;
+            }
+            .text {
+                h5 {
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s20);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-bold);
+                    line-height: 20px;    
+                    margin: 0 8px 0 32px;   
+                }
+            }
+            .content {
+                a {
+                    color: var(--ztc-text-text-3);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px;
+                    display: inline-block;
+                    transition: all .4s;
+                    margin: 0 0 0 16px;
+                    &:hover {
+                        color: var(--ztc-text-text-4);
+                        transition: all .4s;
+                    }      
+                }
+            }
+        }
+        .contact-boxarea {
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            background: var(--ztc-bg-bg-4);
+            padding: 32px;
+            text-align: center;
+            margin-top: 30px;
+            transition: all .4s;
+            @media #{$xs} {
+                margin-top: 30px;
+            }
+             @media #{$md} {
+                margin-top: 30px;
+            }
+             @media #{$lg} {
+                margin-top: 30px;
+            }
+            &:hover {
+                transform: translateY(-10px);
+                transition: all .4s;
+                .icons {
+                    transform: rotateY(-180deg);
+                    transition: all .4s;
+                }
+            }
+            .icons {
+                height: 60px;
+                width: 60px;
+                display: inline-block;
+                transition: all .4s;
+                background: var(--ztc-bg-bg-1);
+                transition: all .4s;
+                text-align: center;
+                border-radius: 50%;
+                line-height: 60px;
+            }
+            .content-desc {
+                h4 {
+                    color: var(--ztc-text-text-2);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s20);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-bold);
+                    line-height: 20px;       
+                }
+                a {
+                    color: var(--ztc-text-text-3);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 40px;
+                    display: inline-block;
+                    transition: all .4s;
+                    margin-top: 16px;
+                    &:hover {
+                        color: var(--ztc-text-text-4);
+                        transition: all .4s;
+                    }      
+                }
+            }
+        }
+    }
+    .contact-main-boxarea {
+        position: sticky;
+        z-index: 1;
+        background: var(--ztc-bg-bg-4);
+        padding: 32px;
+        border-radius: 8px;
+        top: 120px;
+        h3 {
+            color: var(--ztc-text-text-2);
+            font-family: var(--ztc-family-font1);
+            font-size: var(--ztc-font-size-font-s24);
+            font-style: normal;
+            font-weight: var(--ztc-weight-bold);
+            line-height: 24px;        
+        }
+        .input-area {
+            margin-top: 16px;
+            input {
+                color: var(--ztc-text-text-2);
+                font-family:var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s18);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 18px; 
+                background: var(--ztc-bg-bg-1);
+                border-radius: 4px;
+                padding: 18px 16px;
+                width: 100%;
+                &::placeholder {
+                    color: var(--ztc-text-text-3);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                } 
+            }
+            .nice-select {
+                color: var(--ztc-text-text-3);
+                font-family:var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s18);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 18px; 
+                background: var(--ztc-bg-bg-1);
+                border-radius: 4px;
+                padding: 18px 16px;
+                width: 100%;
+                height: auto;
+                border: none;
+                box-shadow: none;
+                &::after {
+                    height: 7px;
+                    width: 7px;
+                    right: 16px;
+                }
+                ul {
+                    width: 100%;
+                }
+            }
+
+            textarea {
+                color: var(--ztc-text-text-2);
+                font-family:var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s18);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 18px; 
+                background: var(--ztc-bg-bg-1);
+                border-radius: 4px;
+                padding: 18px 16px;
+                width: 100%;
+                height: 140px;
+                &::placeholder {
+                    color: var(--ztc-text-text-3);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                } 
+            }
+            button {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    iframe {
+        width: 100%;
+        border-radius: 8px;
+        height: 500px;
+        @media #{$xs} {
+            height: 300px;
+        }
+        @media #{$md} {
+            height: 400px;
+        }
+    }
+}
+
+// Homepage 07 //
+.contact7 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--ztc-bg-bg-14);
+    .contact-widget-area {
+        padding: 0 0 0 40px;
+        @media #{$xs} {
+            padding: 0;
+        }
+         @media #{$md} {
+            padding: 0;
+        }
+         @media #{$lg} {
+            padding: 0;
+        }
+        .contact-boxarea {
+            position: relative;
+            z-index: 1;
+            .input-area {
+                margin-top: 16px;
+                input {
+                    color: var(--ztc-text-text-9);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-1);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    &::placeholder {
+                        color: var(--ztc-text-text-10);
+                        font-family:var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s18);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 18px; 
+                    } 
+                }
+                .nice-select {
+                    color: var(--ztc-text-text-10);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-1);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    height: auto;
+                    border: none;
+                    box-shadow: none;
+                    &::after {
+                        height: 7px;
+                        width: 7px;
+                        right: 16px;
+                    }
+                    ul {
+                        width: 100%;
+                    }
+                }
+
+                textarea {
+                    color: var(--ztc-text-text-9);
+                    font-family:var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 18px; 
+                    background: var(--ztc-bg-bg-1);
+                    border-radius: 4px;
+                    padding: 18px 16px;
+                    width: 100%;
+                    height: 140px;
+                    &::placeholder {
+                        color: var(--ztc-text-text-10);
+                        font-family:var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s18);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 18px; 
+                    } 
+                }
+                button {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .contact-maps-area {
+        iframe {
+            width: 100%;
+            border-radius: 8px;
+            height: 608px;
+            @media #{$xs} {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+            @media #{$md} {
+                height: 400px;
+                margin-bottom: 30px;
+            }
+            @media #{$lg} {
+                height: 400px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+/*============= CONTACT CSS AREA ENDS===============*/

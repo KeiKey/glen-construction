@@ -1,0 +1,290 @@
+@use '../../utils/' as * ;
+
+/*============= FAQ CSS AREA ===============*/
+.faq4 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--ztc-bg-bg-10);
+    .heading4 {
+        h5 {
+            background: var(--ztc-bg-bg-1);
+        }
+    }
+    .faq-main-section {
+        position: relative;
+        z-index: 1;
+        .accordion-item {
+            background: var(--ztc-bg-bg-9);
+            box-shadow: none;
+            border: none;
+            border-radius: 8px;
+            button {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s20);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 20px;
+                padding: 24px;
+                box-shadow: none;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                @media #{$xs} {
+                    line-height: 26px;
+                }
+                &:not(.collapsed) {
+                    background: none;
+                    &::after {
+                        filter: brightness(0);
+                    }
+                }
+            }
+            .accordion-body {
+                padding: 0;
+                p {
+                    color: var(--ztc-text-text-3);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 26px;
+                    padding: 0 24px 24px 24px;
+                }
+            }
+        }
+    }
+}
+
+// Homepage 07 //
+.faq7-section {
+    position: relative;
+    z-index: 1;
+    background: var(--ztc-bg-bg-14);
+    padding: 320px 0 100px;
+    @media #{$xs} {
+        padding: 320px 0 50px;
+    }
+    @media #{$md} {
+        padding: 320px 0 50px;
+    }
+    .faq7-accordion {
+        position: relative;
+        z-index: 1;
+        @media #{$xs} {
+            margin-top: 30px;
+        }
+        @media #{$md} {
+            margin-top: 30px;
+        }
+        .accordion {
+            .accordion-item {
+                border: none;
+                box-shadow: none;
+                border-radius: 10px;
+                .accordion-header {
+                    button {
+                        color: var(--ztc-text-text-9);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s20);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-bold);
+                        line-height: 24px;
+                        text-transform: capitalize;
+                        border: none;
+                        box-shadow: none;
+                        border-radius: 12px;
+                        background: var(--ztc-bg-bg-1);
+                        padding: 24px 30px;
+                        &::after {
+                            filter: brightness(0);
+                        }
+                    }
+                }
+                .accordion-body {
+                    padding: 0;
+                    p {
+                        color: var(--ztc-text-text-10);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s16);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-medium);
+                        line-height: 24px;
+                        padding: 0 30px 24px 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Homepage 08 //
+.faq8-section {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--ztc-bg-bg-17);
+
+    .faq8-section {
+        .accordion {
+           .accordion-item {
+            background: var(--ztc-bg-bg-1);
+            border-radius: 8px;
+            .accordion-header {
+                button {
+                    color: var(--ztc-text-text-12);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s24);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-bold);
+                    line-height: 24px;
+                    text-transform: capitalize;
+                    box-shadow: none;
+                    padding: 24px 30px;
+                    background: none;
+                    @media #{$lg} {
+                        font-size: var(--ztc-font-size-font-s18);
+                        line-height: 20px;
+                    }
+
+                    @media #{$md} {
+                        font-size: var(--ztc-font-size-font-s18);
+                        line-height: 24px;
+                    }
+
+                    @media #{$xs} {
+                        font-size: var(--ztc-font-size-font-s18);
+                        line-height: 24px;
+                    }
+                    &::after {
+                        filter: brightness(0) invert(1);
+                    }
+                    &::before {
+                        height: 28px;
+                        width: 28px;
+                        border-radius: 50%;
+                        background: var(--ztc-bg-bg-15);
+                        position: absolute;
+                        content: "";
+                        right: 26px;
+                    }
+                }
+            }
+            .accordion-body {
+                padding: 0;
+                p {
+                    padding: 0 30px 24px 30px;
+                    color: var(--ztc-text-text-10);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s16);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 24px
+                }
+            }
+           } 
+        }
+    }
+}
+
+// FAQ VIDEO //
+.faq-video {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -230px;
+    .faq-video-service {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        height: 500px;
+        border-radius: 12px;
+        .play-btn-area {
+             .video{
+                height: 112px;
+                width: 112px;
+                text-align: center;
+                line-height: 112px;
+                border-radius: 50%;
+                display: inline-block;
+                transition: all .4s;
+                color: var(--ztc-text-text-11);
+                background: var(--ztc-bg-bg-1);
+                font-size: var(--ztc-font-size-font-s32);
+                position: absolute;
+                z-index: 1;
+                left: 50%;
+                top: 50%;
+                margin-top: -56px;
+                margin-left: -56px;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 100%;
+                    left: 56px;
+                    top: 56px;
+                    background: var(--ztc-bg-bg-1);
+                    transition: all .4s;
+                    border-radius: 50%;
+                    z-index: -1;
+                    animation: pulse-border 1500ms ease-out infinite;
+                    opacity: 40%;
+                }
+            }
+        }
+    }
+}
+// Inner Pages //
+.faq-inner {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .faq-main-section {
+        position: relative;
+        z-index: 1;
+        .accordion-item {
+            background: var(--ztc-bg-bg-3);
+            box-shadow: none;
+            border: 1px solid #E7E7E7;
+            border-radius: 8px;
+            button {
+                color: var(--ztc-text-text-2);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s20);
+                font-style: normal;
+                font-weight: var(--ztc-weight-semibold);
+                line-height: 20px;
+                padding: 24px;
+                box-shadow: none;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                @media #{$xs} {
+                    line-height: 26px;
+                }
+                &:not(.collapsed) {
+                    background: none;
+                    color: var(--ztc-text-text-1);
+                    &::after {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+            .accordion-body {
+                padding: 0;
+                p {
+                    color: var(--ztc-text-text-1);
+                    font-family: var(--ztc-family-font1);
+                    font-size: var(--ztc-font-size-font-s18);
+                    font-style: normal;
+                    font-weight: var(--ztc-weight-medium);
+                    line-height: 26px;
+                    padding: 0 24px 24px 24px;
+                    opacity: 80%;
+                }
+            }
+        }
+    }
+}
+/*============= FAQ CSS AREA ===============*/

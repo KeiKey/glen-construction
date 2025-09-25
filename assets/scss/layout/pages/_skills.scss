@@ -1,0 +1,153 @@
+@use '../../utils/' as * ;
+
+/*============= SKILLS CSS AREA STARTS ===============*/
+.skills2 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .heading2 {
+        padding: 0 50px 0 0;
+        @media #{$xs} {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        @media #{$md} {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        @media #{$lg} {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .skills-section {
+            .skill {
+                margin-top: 24px;
+                .skill-header {
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        color: var(--ztc-text-text-2);
+                        font-family: var(--ztc-family-font1);
+                        font-size: var(--ztc-font-size-font-s18);
+                        font-style: normal;
+                        font-weight: var(--ztc-weight-bold);
+                        line-height: 18px;
+                        margin-bottom: 15px;
+                    }
+                  }
+                  .progress-bar {
+                    width: 100%;
+                    background: rgba(15, 13, 13, 0.10);
+                    height: 8px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    .progress-fill {
+                        height: 100%;
+                        background-color: #e50914;
+                        transition: width 1s ease-in-out;
+                      }
+                  }
+              }
+          }
+    }
+    .skills-images-area {
+        position: relative;
+        z-index: 1;
+        .img1 {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+                @media #{$lg} {
+                    height: 400px;
+                }
+            }
+        }
+    }
+}
+
+// Homepage 09 //
+.skills9-section  {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--ztc-bg-bg-14);
+    margin: 0 60px;
+    border-radius: 10px;
+    @media #{$xs} {
+        margin: 0;
+        border-radius: 0;
+    }
+    @media #{$md} {
+        margin: 0;
+        border-radius: 0;
+    }
+    @media #{$lg} {
+        margin: 0;
+        border-radius: 0;
+    }
+    .skills9-boxarea {
+        position: relative;
+        z-index: 1;
+        &:hover {
+            .icons {
+                transform: rotateY(-180deg);
+                transition: all .4s;
+            }
+        }
+        .icons {
+            position: absolute;
+            transition: all .4s;
+        }
+        .text-area {
+            position: relative;
+            padding-left: 60px;
+            a {
+                color: var(--ztc-text-text-12);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s24);
+                font-style: normal;
+                font-weight: var(--ztc-weight-bold);
+                line-height: 24px;
+                text-transform: capitalize;
+                display: inline-block;
+                transition: all .4s;
+                @media #{$xs} {
+                    font-size: var(--ztc-font-size-font-s20);
+                    line-height: 20px;
+                }
+                &:hover {
+                    color: var(--ztc-text-text-14);
+                    transition: all .4s;
+                }
+            }
+            p {
+                color: var(--ztc-text-text-10);
+                font-family: var(--ztc-family-font1);
+                font-size: var(--ztc-font-size-font-s16);
+                font-style: normal;
+                font-weight: var(--ztc-weight-medium);
+                line-height: 24px;
+            }
+        }
+    }
+    .skills-iamges-area {
+        @media #{$xs} {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        @media #{$md} {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+}
+/*============= SKILLS CSS AREA ENDS ===============*/

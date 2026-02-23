@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://glenconstructionllc.com/sitemap.xml

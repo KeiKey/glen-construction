@@ -157,8 +157,8 @@
                     </div>
                     <div class="col-xl-7 d-none d-xl-block">
                         <div class="vl-main-menu text-center">
-                            <nav class="vl-mobile-menu-active">
-                                <ul>
+                            <nav class="vl-mobile-menu-active navbar">
+                                <ul class="navbar-nav">
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li class="nav-item dropdown">
@@ -912,35 +912,31 @@
     </div>
     <!--===== FOOTER AREA ENDS =======-->
     <style>
-        /* Hide submenu by default */
-        .vl-mobile-menu-active .dropdown-menu {
+        /* Open dropdown on hover */
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Optional smooth behavior */
+        .navbar-nav .dropdown-menu {
             display: none;
-            list-style: none;
-            padding-left: 15px;
         }
 
-        /* Show submenu when active */
-        .vl-mobile-menu-active .dropdown.show .dropdown-menu {
+        .navbar-nav .dropdown:hover>.dropdown-menu {
             display: block;
-        }
-
-        /* Optional styling */
-        .vl-mobile-menu-active .dropdown-menu li a {
-            display: block;
-            padding: 8px 0;
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdowns = document.querySelectorAll(".vl-mobile-menu-active .dropdown > a");
+        document.querySelectorAll('.navbar .dropdown').forEach(function (dropdown) {
+            dropdown.addEventListener('mouseenter', function () {
+                let menu = this.querySelector('.dropdown-menu');
+                menu.classList.add('show');
+            });
 
-            dropdowns.forEach(function (dropdown) {
-                dropdown.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const parent = this.parentElement;
-
-                    parent.classList.toggle("show");
-                });
+            dropdown.addEventListener('mouseleave', function () {
+                let menu = this.querySelector('.dropdown-menu');
+                menu.classList.remove('show');
             });
         });
     </script>

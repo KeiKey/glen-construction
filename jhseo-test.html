@@ -157,8 +157,8 @@
                     </div>
                     <div class="col-xl-7 d-none d-xl-block">
                         <div class="vl-main-menu text-center">
-                            <nav class="vl-mobile-menu-active navbar">
-                                <ul class="navbar-nav">
+                            <nav class="vl-mobile-menu-active navbar-ib">
+                                <ul class="navbar-nav-ib">
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li class="nav-item dropdown">
@@ -913,22 +913,22 @@
     <!--===== FOOTER AREA ENDS =======-->
     <style>
         /* Open dropdown on hover */
-        .navbar-nav .dropdown:hover .dropdown-menu {
+        .navbar-nav-ib .dropdown:hover .dropdown-menu {
             display: block;
             margin-top: 0;
         }
 
         /* Optional smooth behavior */
-        .navbar-nav .dropdown-menu {
+        .navbar-nav-ib .dropdown-menu {
             display: none;
         }
 
-        .navbar-nav .dropdown:hover>.dropdown-menu {
+        .navbar-nav-ib .dropdown:hover>.dropdown-menu {
             display: block;
         }
     </style>
     <script>
-        document.querySelectorAll('.navbar .dropdown').forEach(function (dropdown) {
+        document.querySelectorAll('.navbar-ib .dropdown').forEach(function (dropdown) {
             dropdown.addEventListener('mouseenter', function () {
                 let menu = this.querySelector('.dropdown-menu');
                 menu.classList.add('show');

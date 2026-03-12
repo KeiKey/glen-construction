@@ -157,14 +157,13 @@
                     </div>
                     <div class="col-xl-7 d-none d-xl-block">
                         <div class="vl-main-menu text-center">
-                            <nav class="vl-mobile-menu-active navbar-ib">
-                                <ul class="navbar-nav-ib">
+                            <nav class="vl-mobile-menu-active">
+                                <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false"
-                                            href="service.html">Services</a>
+                                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false" href="service.html">Services</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <li><a class="dropdown-item" href="#">Action</a></li>
                                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -911,51 +910,6 @@
         </div>
     </div>
     <!--===== FOOTER AREA ENDS =======-->
-    
-    <style>
-        /* Open dropdown on hover */
-        .navbar-nav-ib .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-        }
-        /* Optional smooth behavior */
-        .navbar-nav-ib .dropdown-menu {
-            display: none;
-        }
-        .navbar-nav-ib .dropdown:hover>.dropdown-menu {
-            display: block;
-        }
-
-        /* Only apply hover dropdown on large screens */
-        @media (min-width:1200px) {
-            .navbar-nav-ib .dropdown-menu {
-                display: none;
-            }
-            .navbar-nav-ib .dropdown:hover>.dropdown-menu {
-                display: block;
-                margin-top: 0;
-            }
-        }
-    </style>
-
-    <script>
-        function initHoverMenu() {
-            if (window.innerWidth >= 1200) {
-                document.querySelectorAll('.navbar-ib .dropdown').forEach(function (dropdown) {
-                    dropdown.addEventListener('mouseenter', function () {
-                        let menu = this.querySelector('.dropdown-menu');
-                        if (menu) menu.classList.add('show');
-                    });
-                    dropdown.addEventListener('mouseleave', function () {
-                        let menu = this.querySelector('.dropdown-menu');
-                        if (menu) menu.classList.remove('show');
-                    });
-                });
-            }
-        }
-        document.addEventListener("DOMContentLoaded", initHoverMenu);
-        window.addEventListener("resize", initHoverMenu);
-    </script>
 
     <!--===== JS SCRIPT LINK =======-->
     <script src="assets/js/plugins/bootstrap.min.js"></script>

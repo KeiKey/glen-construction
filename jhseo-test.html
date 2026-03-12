@@ -801,7 +801,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 <!--===== FOOTER AREA ENDS =======-->
+<style>/* Open dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+/* Optional smooth behavior */
+.navbar-nav .dropdown-menu {
+    display: none;
+}
+.navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+}
+</style>
+<script>
+    document.querySelectorAll('.navbar .dropdown').forEach(function (dropdown) {
+  dropdown.addEventListener('mouseenter', function () {
+    let menu = this.querySelector('.dropdown-menu');
+    menu.classList.add('show');
+  });
 
+  dropdown.addEventListener('mouseleave', function () {
+    let menu = this.querySelector('.dropdown-menu');
+    menu.classList.remove('show');
+  });
+});
+</script>
 <!--===== JS SCRIPT LINK =======-->
 <script src="assets/js/plugins/bootstrap.min.js"></script>
 <script src="assets/js/plugins/fontawesome.js"></script>

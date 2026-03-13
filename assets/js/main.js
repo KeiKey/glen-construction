@@ -50,42 +50,37 @@ initMobileMenu();
 //========== MOBILE MENU ENDS ============= //
   
 //========== SUBMENU TOGGLE ============= //
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
-    dropdowns.forEach(function (dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        let firstClick = true;
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+        dropdowns.forEach(function (dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
 
-        // For larger screens (>= 1199px), show dropdown on hover
-        dropdown.addEventListener("mouseenter", function () {
-            if (window.innerWidth >= 1199) {
+            // For larger screens (>= 1199px), show dropdown on hover
+            dropdown.addEventListener("mouseenter", function () {
+                if (window.innerWidth >= 1199) {
+                    menu.classList.add("show");
+                }
+            });
+
+            dropdown.addEventListener("mouseleave", function () {
+                if (window.innerWidth >= 1199) {
+                    menu.classList.remove("show");
+                }
+            });
+
+            // For mobile screens (< 1199px), make the submenu always visible and let the "Services" link work
+            if (window.innerWidth < 1199) {
+                // Remove the click toggle on mobile
+                toggle.addEventListener("click", function (e) {
+                    window.location.href = toggle.getAttribute("href");
+                });
+
+                // Always display the menu in mobile view
                 menu.classList.add("show");
             }
         });
-
-        dropdown.addEventListener("mouseleave", function () {
-            if (window.innerWidth >= 1199) {
-                menu.classList.remove("show");
-            }
-        });
-
-        // For smaller screens (< 1199px), keep the submenu open on click
-        toggle.addEventListener("click", function (e) {
-            if (window.innerWidth < 1199) {
-                e.preventDefault(); // Prevent the link's default behavior (going to the service page)
-                if (firstClick) {
-                    // On the first click, show the menu and prevent the redirect
-                    menu.classList.add("show");
-                    firstClick = false;
-                } else {
-                    // On subsequent clicks, allow the page to navigate
-                    window.location.href = toggle.getAttribute("href");
-                }
-            }
-        }, true);
     });
-});
 //========== SUBMENU TOGGLE ENDS ============= //
 
 //========== PRICING AREA ============= //
@@ -845,6 +840,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

@@ -25105,7 +25105,7 @@ img {
 }
 
 /*====================== SUBMENU CSS ========================*/
-  /* Default dropdown hidden */
+    /* Default dropdown menu is hidden */
     .navbar-nav-ib .dropdown-menu {
         display: none;
     }
@@ -25132,32 +25132,11 @@ img {
         background: #3e49570d;
     }
 
+    /* For screens above 1200px */
     @media (min-width:1200px) {
         .navbar-nav-ib .dropdown:hover>.dropdown-menu {
             display: block;
             margin-top: 0;
-        }
-    }
-
-    @media (max-width:1199px) {
-        .navbar-nav-ib .dropdown-menu {
-            position: relative !important;
-            width: 100%;
-        }
-
-        /* Always display the menu in mobile view */
-        .navbar-nav-ib .dropdown-menu.show {
-            display: block !important;
-        }
-
-        ul.dropdown-menu.show {
-            transform: none !important;
-        }
-
-        /* Remove the toggle effect entirely in mobile view */
-        .navbar-nav-ib .dropdown-toggle {
-            pointer-events: none; /* Disable click on toggle */
-            cursor: default; /* Change cursor to default */
         }
     }
 /*====================== END SUBMENU CSS ========================*/

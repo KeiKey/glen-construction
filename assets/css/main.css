@@ -25154,9 +25154,9 @@ img {
             transform: none !important;
         }
 
-        /* Remove the toggle in mobile view */
+        /* Remove the toggle effect entirely in mobile view */
         .navbar-nav-ib .dropdown-toggle {
-            pointer-events: none; /* Disable the click event on toggle */
+            pointer-events: none; /* Disable click on toggle */
             cursor: default; /* Change cursor to default */
         }
     }

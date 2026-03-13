@@ -25106,43 +25106,50 @@ img {
 
 /*====================== SUBMENU CSS ========================*/
  /* Default dropdown hidden */
-	.navbar-nav-ib .dropdown-menu {
-		display: none;
-	}
-	ul.dropdown-menu {
-		padding: 0;
-	}
-	ul.dropdown-menu li {
-		width: 100%;
-	}
-	ul.dropdown-menu li a {
-		display: block !important;
-		border-bottom: 1px solid #155fff1a;
-		width: 100%;
-		padding: 7px 5px 7px 14px !important;
-		color: #0F0D0D !important;
-		font-size: 16px !important;
-		text-align: left;
-	}
-	ul.dropdown-menu li:hover {
-		background: #3e49570d;
-	}
-	@media (min-width:1200px) {
-		.navbar-nav-ib .dropdown:hover>.dropdown-menu {
-			display: block;
-			margin-top: 0;
-		}
-	}
-	@media (max-width:1199px) {
-		.navbar-nav-ib .dropdown-menu {
-			position: relative !important;
-			width: 100%;
-		}
-		.navbar-nav-ib .dropdown-menu.show {
-			display: block;
-		}
-		ul.dropdown-menu.show {
-			transform: none !important;
-		}
-	}
+    /* Default dropdown hidden */
+    .navbar-nav-ib .dropdown-menu {
+        display: none;
+    }
+
+    ul.dropdown-menu {
+        padding: 0;
+    }
+
+    ul.dropdown-menu li {
+        width: 100%;
+    }
+
+    ul.dropdown-menu li a {
+        display: block !important;
+        border-bottom: 1px solid #155fff1a;
+        width: 100%;
+        padding: 7px 5px 7px 14px !important;
+        color: #0F0D0D !important;
+        font-size: 16px !important;
+        text-align: left;
+    }
+
+    ul.dropdown-menu li:hover {
+        background: #3e49570d;
+    }
+
+    @media (min-width:1200px) {
+        .navbar-nav-ib .dropdown:hover>.dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width:1199px) {
+        .navbar-nav-ib .dropdown-menu {
+            position: relative !important;
+            width: 100%;
+        }
+        .navbar-nav-ib .dropdown-menu.show {
+            display: block;
+        }
+        ul.dropdown-menu.show {
+            transform: none !important;
+        }
+    }
 /*====================== END SUBMENU CSS ========================*/

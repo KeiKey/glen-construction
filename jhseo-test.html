@@ -145,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="vl-main-menu text-center">
                         <nav class="vl-mobile-menu-active navbar-ib">
                             <ul class="navbar-nav-ib">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.html">Homee</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
@@ -154,8 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <li><a class="dropdown-item" href="service-decks.html">Decks</a></li>
                                         <li><a class="dropdown-item" href="service-driveway.html">Driveway</a></li>
                                         <li><a class="dropdown-item" href="service-pavers.html">Pavers</a></li>
-                                        <li><a class="dropdown-item" href="service-retaining-wall.html">Retaining
-                                                walls</a></li>
+                                        <li><a class="dropdown-item" href="service-retaining-wall.html">Retaining walls</a></li>
                                         <li><a class="dropdown-item" href="service-roofing.html">Roofing</a></li>
                                         <li><a class="dropdown-item" href="service-steps.html">Steps</a></li>
                                     </ul>
@@ -807,41 +806,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!--===== FOOTER AREA ENDS =======-->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
-    dropdowns.forEach(function (dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        let firstClick = true;
-        dropdown.addEventListener("mouseenter", function () {
-            if (window.innerWidth >= 1199) {
-                menu.classList.add("show");
-            }
-        });
-        dropdown.addEventListener("mouseleave", function () {
-            if (window.innerWidth >= 1199) {
-                menu.classList.remove("show");
-            }
-        });
-        toggle.addEventListener("click", function (e) {
-            if (window.innerWidth < 1199) {
-                if (firstClick) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
+        const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+        dropdowns.forEach(function (dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            let firstClick = true;
+
+            // For larger screens (>= 1199px), show dropdown on hover
+            dropdown.addEventListener("mouseenter", function () {
+                if (window.innerWidth >= 1199) {
                     menu.classList.add("show");
-                    firstClick = false;
-                } else {
-                    // If the dropdown is already open, allow the default behavior
-                    if (!menu.classList.contains("show")) {
-                        window.location.href = toggle.getAttribute("href");
+                }
+            });
+
+            dropdown.addEventListener("mouseleave", function () {
+                if (window.innerWidth >= 1199) {
+                    menu.classList.remove("show");
+                }
+            });
+
+            // For smaller screens (< 1199px), keep the submenu open on click
+            toggle.addEventListener("click", function (e) {
+                if (window.innerWidth < 1199) {
+                    e.preventDefault(); // Prevent the link's default behavior (going to the service page)
+                    if (firstClick) {
+                        // On the first click, show the menu and prevent the redirect
+                        menu.classList.add("show");
+                        firstClick = false;
                     } else {
-                        e.preventDefault(); // Stay on the current page if the menu is open
+                        // On subsequent clicks, allow the page to navigate
+                        window.location.href = toggle.getAttribute("href");
                     }
                 }
-            }
-        }, true);
+            }, true);
+        });
     });
-});
 </script>
+<style>
+    <style>
+    /* Default dropdown hidden */
+    .navbar-nav-ib .dropdown-menu {
+        display: none;
+    }
+
+    ul.dropdown-menu {
+        padding: 0;
+    }
+
+    ul.dropdown-menu li {
+        width: 100%;
+    }
+
+    ul.dropdown-menu li a {
+        display: block !important;
+        border-bottom: 1px solid #155fff1a;
+        width: 100%;
+        padding: 7px 5px 7px 14px !important;
+        color: #0F0D0D !important;
+        font-size: 16px !important;
+        text-align: left;
+    }
+
+    ul.dropdown-menu li:hover {
+        background: #3e49570d;
+    }
+
+    @media (min-width:1200px) {
+        .navbar-nav-ib .dropdown:hover>.dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width:1199px) {
+        .navbar-nav-ib .dropdown-menu {
+            position: relative !important;
+            width: 100%;
+        }
+        .navbar-nav-ib .dropdown-menu.show {
+            display: block;
+        }
+        ul.dropdown-menu.show {
+            transform: none !important;
+        }
+    }
+</style>
+</style>
 <!--===== JS SCRIPT LINK =======-->
 <script src="assets/js/plugins/bootstrap.min.js"></script>
 <script src="assets/js/plugins/fontawesome.js"></script>

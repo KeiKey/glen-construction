@@ -48,6 +48,34 @@ function initMobileMenu() {
 initMobileMenu();
 
 //========== MOBILE MENU ENDS ============= //
+  
+//========== SUBMENU TOGGLE ============= //
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+    dropdowns.forEach(function (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        // Desktop hover
+        dropdown.addEventListener('mouseenter', function () {
+            if (window.innerWidth >= 1199 && menu) {
+                menu.classList.add('show');
+            }
+        });
+        dropdown.addEventListener('mouseleave', function () {
+            if (window.innerWidth >= 1199 && menu) {
+                menu.classList.remove('show');
+            }
+        });
+        // Mobile click toggle
+        toggle.addEventListener('click', function (e) {
+            if (window.innerWidth < 1199) {
+                e.preventDefault();
+                menu.classList.toggle('show');
+            }
+        });
+    });
+});
+//========== SUBMENU TOGGLE ENDS ============= //
 
 //========== PRICING AREA ============= //
 $("#ce-toggle1").on('click', function(event) {
@@ -806,5 +834,6 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 

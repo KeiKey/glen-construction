@@ -51,34 +51,25 @@ initMobileMenu();
   
 //========== SUBMENU TOGGLE ============= //
  document.addEventListener("DOMContentLoaded", function () {
-        const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+    // Get all the dropdown elements
+    const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+
+    // Check if the screen size is above 1200px
+    if (window.innerWidth >= 1200) {
+        // Add hover functionality to show the dropdown menu
         dropdowns.forEach(function (dropdown) {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
             const menu = dropdown.querySelector('.dropdown-menu');
-            // For larger screens (>= 1199px), show dropdown on hover
+
             dropdown.addEventListener("mouseenter", function () {
-                if (window.innerWidth >= 1199) {
-                    menu.classList.add("show");
-                }
-            });
-            dropdown.addEventListener("mouseleave", function () {
-                if (window.innerWidth >= 1199) {
-                    menu.classList.remove("show");
-                }
-            });
-            // For mobile screens (< 1199px), remove the toggle and make the submenu always visible
-            if (window.innerWidth < 1199) {
-                // Ensure that the "Services" link works directly (i.e., no preventDefault)
-                toggle.removeEventListener("click", function (e) {
-                    window.location.href = toggle.getAttribute("href");
-                });
-                // Always display the menu in mobile view
                 menu.classList.add("show");
-                // Remove the pointer events on the dropdown toggle to ensure it is not clickable
-                toggle.style.pointerEvents = 'none'; // Disable the toggle link on mobile
-            }
+            });
+
+            dropdown.addEventListener("mouseleave", function () {
+                menu.classList.remove("show");
+            });
         });
-    });
+    }
+});
 //========== SUBMENU TOGGLE ENDS ============= //
 
 //========== PRICING AREA ============= //
@@ -838,6 +829,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

@@ -56,24 +56,30 @@ document.addEventListener("DOMContentLoaded", function () {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
         let firstClick = true;
+
+        // For larger screens (>= 1199px), show dropdown on hover
         dropdown.addEventListener("mouseenter", function () {
             if (window.innerWidth >= 1199) {
                 menu.classList.add("show");
             }
         });
+
         dropdown.addEventListener("mouseleave", function () {
             if (window.innerWidth >= 1199) {
                 menu.classList.remove("show");
             }
         });
+
+        // For smaller screens (< 1199px), keep the submenu open on click
         toggle.addEventListener("click", function (e) {
             if (window.innerWidth < 1199) {
+                e.preventDefault(); // Prevent the link's default behavior (going to the service page)
                 if (firstClick) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
+                    // On the first click, show the menu and prevent the redirect
                     menu.classList.add("show");
                     firstClick = false;
                 } else {
+                    // On subsequent clicks, allow the page to navigate
                     window.location.href = toggle.getAttribute("href");
                 }
             }
@@ -839,6 +845,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

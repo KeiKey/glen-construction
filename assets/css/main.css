@@ -25139,4 +25139,10 @@ img {
             margin-top: 0;
         }
     }
+@media(max-width:1199px){
+	li.nav-item.dropdown ul.dropdown-menu {
+		display: block;
+		position: relative;
+	}
+}
 /*====================== END SUBMENU CSS ========================*/

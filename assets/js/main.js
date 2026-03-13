@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdowns.forEach(function (dropdown) {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
+        let opened = false;
         // Desktop hover
         dropdown.addEventListener('mouseenter', function () {
             if (window.innerWidth >= 1199) {
@@ -66,14 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 menu.classList.remove('show');
             }
         });
-        // Mobile click
+        // Mobile behaviour
         toggle.addEventListener('click', function (e) {
             if (window.innerWidth < 1199) {
-                if (!menu.classList.contains('show')) {
-                    e.preventDefault(); // first click only opens dropdown
+                if (!opened) {
+                    e.preventDefault();
+                    e.stopPropagation();
                     menu.classList.add('show');
+                    opened = true;
+                } else {
+                    window.location.href = toggle.getAttribute('href');
                 }
-                // second click will follow the link
             }
         });
     });
@@ -837,6 +841,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

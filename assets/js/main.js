@@ -50,35 +50,35 @@ initMobileMenu();
 //========== MOBILE MENU ENDS ============= //
   
 //========== SUBMENU TOGGLE ============= //
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
-    dropdowns.forEach(function (dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        // For larger screens (>= 1199px), show dropdown on hover
-        dropdown.addEventListener("mouseenter", function () {
-            if (window.innerWidth >= 1199) {
-                menu.classList.add("show");
-            }
-        });
-        dropdown.addEventListener("mouseleave", function () {
-            if (window.innerWidth >= 1199) {
-                menu.classList.remove("show");
-            }
-        });
-        // For mobile screens (< 1199px), make the submenu always visible and let the "Services" link work
-        if (window.innerWidth < 1199) {
-            // Remove the click toggle completely (do not prevent default)
-            toggle.removeEventListener("click", function (e) {
-                window.location.href = toggle.getAttribute("href");
+ document.addEventListener("DOMContentLoaded", function () {
+        const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
+        dropdowns.forEach(function (dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            // For larger screens (>= 1199px), show dropdown on hover
+            dropdown.addEventListener("mouseenter", function () {
+                if (window.innerWidth >= 1199) {
+                    menu.classList.add("show");
+                }
             });
-            // Always display the menu in mobile view (no need for toggle)
-            menu.classList.add("show");
-            // Optionally, remove the pointer events on the dropdown toggle to ensure it is not clickable
-            toggle.style.pointerEvents = 'none';
-        }
+            dropdown.addEventListener("mouseleave", function () {
+                if (window.innerWidth >= 1199) {
+                    menu.classList.remove("show");
+                }
+            });
+            // For mobile screens (< 1199px), remove the toggle and make the submenu always visible
+            if (window.innerWidth < 1199) {
+                // Ensure that the "Services" link works directly (i.e., no preventDefault)
+                toggle.removeEventListener("click", function (e) {
+                    window.location.href = toggle.getAttribute("href");
+                });
+                // Always display the menu in mobile view
+                menu.classList.add("show");
+                // Remove the pointer events on the dropdown toggle to ensure it is not clickable
+                toggle.style.pointerEvents = 'none'; // Disable the toggle link on mobile
+            }
+        });
     });
-});
 //========== SUBMENU TOGGLE ENDS ============= //
 
 //========== PRICING AREA ============= //
@@ -838,6 +838,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

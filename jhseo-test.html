@@ -158,26 +158,41 @@
                     <div class="col-xl-7 d-none d-xl-block">
                         <div class="vl-main-menu text-center">
                             <nav class="vl-mobile-menu-active navbar-ib">
+
                                 <ul class="navbar-nav-ib">
+
                                     <li><a href="index.html">Home</a></li>
+
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false"
-                                            href="service.html">Services</a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item" href="service-decks.html">Decks</a></li>
-                                            <li><a class="dropdown-item" href="service-driveway.html">Driveway</a></li>
-                                            <li><a class="dropdown-item" href="service-pavers.html">Pavers</a></li>
-                                            <li><a class="dropdown-item" href="service-retaining-wall.html">Retaining
-                                                    walls</a></li>
-                                            <li><a class="dropdown-item" href="service-roofing.html">Roofing</a></li>
-                                            <li><a class="dropdown-item" href="service-steps.html">Steps</a></li>
+
+                                    <li class="dropdown">
+
+                                        <a class="dropdown-toggle" href="service.html">Services</a>
+
+                                        <ul class="dropdown-menu">
+
+                                            <li><a href="service-decks.html">Decks</a></li>
+
+                                            <li><a href="service-driveway.html">Driveway</a></li>
+
+                                            <li><a href="service-pavers.html">Pavers</a></li>
+
+                                            <li><a href="service-retaining-wall.html">Retaining walls</a></li>
+
+                                            <li><a href="service-roofing.html">Roofing</a></li>
+
+                                            <li><a href="service-steps.html">Steps</a></li>
+
                                         </ul>
+
                                     </li>
+
                                     <li><a href="testimonial.html">Testimonials</a></li>
+
                                     <li><a href="contact.html">Contact Us</a></li>
+
                                 </ul>
+
                             </nav>
                         </div>
                     </div>
@@ -915,7 +930,106 @@
         </div>
     </div>
     <!--===== FOOTER AREA ENDS =======-->
+    <style>
+        /* MENU STYLE */
+        .navbar-ib {
+            background: #fff;
+        }
 
+        .navbar-nav-ib {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar-nav-ib li {
+            position: relative;
+        }
+
+        .navbar-nav-ib a {
+            text-decoration: none;
+            padding: 10px 5px;
+            display: block;
+        }
+
+        /* DROPDOWN */
+
+        .dropdown-menu {
+            display: none;
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            padding: 10px 0;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu li a {
+            padding: 8px 15px;
+        }
+
+        /* DESKTOP HOVER */
+
+        @media (min-width:1199px) {
+
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width:1199px) {
+
+            .navbar-nav-ib {
+                flex-direction: column;
+            }
+
+            .dropdown-menu {
+                position: relative;
+                box-shadow: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+        }
+    </style>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dropdowns = document.querySelectorAll(".navbar-ib .dropdown");
+
+            dropdowns.forEach(function (dropdown) {
+
+                const toggle = dropdown.querySelector(".dropdown-toggle");
+
+                toggle.addEventListener("click", function (e) {
+
+                    if (window.innerWidth < 1199) {
+
+                        if (!dropdown.classList.contains("active")) {
+                            e.preventDefault();
+                            dropdown.classList.add("active");
+                        }
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
     <!--===== JS SCRIPT LINK =======-->
     <script src="assets/js/plugins/bootstrap.min.js"></script>
     <script src="assets/js/plugins/fontawesome.js"></script>

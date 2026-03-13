@@ -25106,7 +25106,6 @@ img {
 
 /*====================== SUBMENU CSS ========================*/
  /* Default dropdown hidden */
-    /* Default dropdown hidden */
     .navbar-nav-ib .dropdown-menu {
         display: none;
     }
@@ -25145,11 +25144,20 @@ img {
             position: relative !important;
             width: 100%;
         }
+
+        /* Always display the menu in mobile view */
         .navbar-nav-ib .dropdown-menu.show {
-            display: block;
+            display: block !important;
         }
+
         ul.dropdown-menu.show {
             transform: none !important;
+        }
+
+        /* Remove the toggle in mobile view */
+        .navbar-nav-ib .dropdown-toggle {
+            pointer-events: none; /* Disable the click event on toggle */
+            cursor: default; /* Change cursor to default */
         }
     }
 /*====================== END SUBMENU CSS ========================*/

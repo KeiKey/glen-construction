@@ -55,31 +55,29 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdowns.forEach(function (dropdown) {
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
-        let opened = false;
-        // Desktop hover
-        dropdown.addEventListener('mouseenter', function () {
+        let firstClick = true;
+        dropdown.addEventListener("mouseenter", function () {
             if (window.innerWidth >= 1199) {
-                menu.classList.add('show');
+                menu.classList.add("show");
             }
         });
-        dropdown.addEventListener('mouseleave', function () {
+        dropdown.addEventListener("mouseleave", function () {
             if (window.innerWidth >= 1199) {
-                menu.classList.remove('show');
+                menu.classList.remove("show");
             }
         });
-        // Mobile behaviour
-        toggle.addEventListener('click', function (e) {
+        toggle.addEventListener("click", function (e) {
             if (window.innerWidth < 1199) {
-                if (!opened) {
+                if (firstClick) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    menu.classList.add('show');
-                    opened = true;
+                    e.stopImmediatePropagation();
+                    menu.classList.add("show");
+                    firstClick = false;
                 } else {
-                    window.location.href = toggle.getAttribute('href');
+                    window.location.href = toggle.getAttribute("href");
                 }
             }
-        });
+        }, true);
     });
 });
 //========== SUBMENU TOGGLE ENDS ============= //
@@ -841,6 +839,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

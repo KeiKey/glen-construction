@@ -170,19 +170,12 @@
                                         <a class="dropdown-toggle" href="service.html">Services</a>
 
                                         <ul class="dropdown-menu">
-
                                             <li><a href="service-decks.html">Decks</a></li>
-
                                             <li><a href="service-driveway.html">Driveway</a></li>
-
                                             <li><a href="service-pavers.html">Pavers</a></li>
-
                                             <li><a href="service-retaining-wall.html">Retaining walls</a></li>
-
                                             <li><a href="service-roofing.html">Roofing</a></li>
-
                                             <li><a href="service-steps.html">Steps</a></li>
-
                                         </ul>
 
                                     </li>
@@ -931,15 +924,10 @@
     </div>
     <!--===== FOOTER AREA ENDS =======-->
     <style>
-        /* MENU STYLE */
-        .navbar-ib {
-            background: #fff;
-        }
-
         .navbar-nav-ib {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
             display: flex;
             gap: 25px;
         }
@@ -950,19 +938,19 @@
 
         .navbar-nav-ib a {
             text-decoration: none;
-            padding: 10px 5px;
             display: block;
+            padding: 10px 5px;
         }
 
-        /* DROPDOWN */
+        /* dropdown */
 
         .dropdown-menu {
             display: none;
-            list-style: none;
             position: absolute;
             top: 100%;
             left: 0;
             background: #fff;
+            list-style: none;
             padding: 10px 0;
             min-width: 200px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -972,7 +960,7 @@
             padding: 8px 15px;
         }
 
-        /* DESKTOP HOVER */
+        /* desktop */
 
         @media (min-width:1199px) {
 
@@ -982,7 +970,7 @@
 
         }
 
-        /* MOBILE */
+        /* mobile */
 
         @media (max-width:1199px) {
 
@@ -995,7 +983,7 @@
                 box-shadow: none;
             }
 
-            .dropdown.active .dropdown-menu {
+            .dropdown.open .dropdown-menu {
                 display: block;
             }
 
@@ -1006,19 +994,26 @@
 
         document.addEventListener("DOMContentLoaded", function () {
 
-            const dropdowns = document.querySelectorAll(".navbar-ib .dropdown");
+            const toggles = document.querySelectorAll(".dropdown-toggle");
 
-            dropdowns.forEach(function (dropdown) {
-
-                const toggle = dropdown.querySelector(".dropdown-toggle");
+            toggles.forEach(function (toggle) {
 
                 toggle.addEventListener("click", function (e) {
 
                     if (window.innerWidth < 1199) {
 
-                        if (!dropdown.classList.contains("active")) {
+                        const parent = this.parentElement;
+
+                        if (!parent.classList.contains("open")) {
+
                             e.preventDefault();
-                            dropdown.classList.add("active");
+
+                            document.querySelectorAll(".dropdown").forEach(function (d) {
+                                d.classList.remove("open");
+                            });
+
+                            parent.classList.add("open");
+
                         }
 
                     }

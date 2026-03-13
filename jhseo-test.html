@@ -157,7 +157,7 @@
                     </div>
                     <div class="col-xl-7 d-none d-xl-block">
                         <div class="vl-main-menu text-center">
-                            <nav class="navbar-ib">
+                            <nav class="vl-mobile-menu-active navbar-ib">
 
                                 <ul class="navbar-nav-ib">
 
@@ -167,9 +167,7 @@
 
                                     <li class="dropdown">
 
-                                        <a href="service.html">Services</a>
-
-                                        <span class="dropdown-toggle-btn">▼</span>
+                                        <a class="dropdown-toggle" href="service.html">Services</a>
 
                                         <ul class="dropdown-menu">
                                             <li><a href="service-decks.html">Decks</a></li>
@@ -941,7 +939,7 @@
         .navbar-nav-ib a {
             text-decoration: none;
             padding: 10px 5px;
-            display: inline-block;
+            display: block;
         }
 
         /* dropdown */
@@ -959,27 +957,22 @@
         }
 
         .dropdown-menu li a {
-            display: block;
             padding: 8px 15px;
         }
 
-        /* desktop hover */
+        /* desktop */
 
-        @media(min-width:1199px) {
+        @media (min-width:1199px) {
 
             .dropdown:hover .dropdown-menu {
                 display: block;
-            }
-
-            .dropdown-toggle-btn {
-                display: none;
             }
 
         }
 
         /* mobile */
 
-        @media(max-width:1199px) {
+        @media (max-width:1199px) {
 
             .navbar-nav-ib {
                 flex-direction: column;
@@ -994,33 +987,35 @@
                 display: block;
             }
 
-            .dropdown-toggle-btn {
-                cursor: pointer;
-                margin-left: 5px;
-            }
-
         }
     </style>
 
     <script>
 
-        document.querySelectorAll(".dropdown-toggle-btn").forEach(function (btn) {
+        document.addEventListener("DOMContentLoaded", function () {
 
-            btn.addEventListener("click", function () {
+            document.querySelectorAll(".dropdown-toggle").forEach(function (toggle) {
 
-                if (window.innerWidth < 1199) {
+                toggle.addEventListener("click", function (e) {
 
-                    const parent = this.parentElement;
+                    if (window.innerWidth < 1199) {
 
-                    document.querySelectorAll(".dropdown").forEach(function (d) {
-                        if (d !== parent) {
-                            d.classList.remove("open");
+                        const parent = this.parentElement;
+
+                        if (!parent.classList.contains("open")) {
+
+                            e.preventDefault();
+                            parent.classList.add("open");
+
+                        } else {
+
+                            window.location = this.getAttribute("href");
+
                         }
-                    });
 
-                    parent.classList.toggle("open");
+                    }
 
-                }
+                });
 
             });
 

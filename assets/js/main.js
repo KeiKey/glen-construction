@@ -51,43 +51,32 @@ initMobileMenu();
   
 //========== SUBMENU TOGGLE ============= //
 document.addEventListener("DOMContentLoaded", function () {
-
     const dropdowns = document.querySelectorAll('.navbar-ib .dropdown');
-
     dropdowns.forEach(function (dropdown) {
-
         const toggle = dropdown.querySelector('.dropdown-toggle');
         const menu = dropdown.querySelector('.dropdown-menu');
-
         // Desktop hover
         dropdown.addEventListener('mouseenter', function () {
             if (window.innerWidth >= 1199) {
                 menu.classList.add('show');
             }
         });
-
         dropdown.addEventListener('mouseleave', function () {
             if (window.innerWidth >= 1199) {
                 menu.classList.remove('show');
             }
         });
-
         // Mobile click
         toggle.addEventListener('click', function (e) {
-
             if (window.innerWidth < 1199) {
-
                 if (!menu.classList.contains('show')) {
                     e.preventDefault(); // first click only opens dropdown
                     menu.classList.add('show');
                 }
                 // second click will follow the link
             }
-
         });
-
     });
-
 });
 //========== SUBMENU TOGGLE ENDS ============= //
 
@@ -848,6 +837,7 @@ $(window).on('load', function(event) {
 });
 
 })(jQuery);
+
 
 
 

@@ -299,7 +299,168 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   text-transform: uppercase;
   box-sizing: border-box;
 }
-    
+
+    .serv-deck-faq {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.serv-deck-faq-wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.serv-deck-faq-item {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.serv-deck-faq-item:hover {
+  border-color: #dcdcdc;
+}
+
+.serv-deck-faq-item[open] {
+  border-color: #dcdcdc;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.serv-deck-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 55px 20px 20px;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111111;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.serv-deck-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.serv-deck-faq-item summary::marker {
+  display: none;
+}
+
+.serv-deck-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #666;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.serv-deck-faq-item[open] summary::after {
+  content: "−";
+  color: #0d6efd;
+  border-color: #cfdfff;
+  background: #f5f9ff;
+}
+
+.serv-deck-faq-item[open] summary {
+  color: #0d6efd;
+}
+
+.serv-deck-faq-content {
+  padding: 0 20px 20px 20px;
+}
+
+.serv-deck-faq-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666666;
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  .serv-deck-faq {
+    padding: 50px 15px;
+  }
+
+  .serv-deck-faq-item summary {
+    font-size: 18px;
+    padding: 18px 50px 18px 18px;
+  }
+
+  .serv-deck-faq-content {
+    padding: 0 18px 18px 18px;
+  }
+
+  .serv-deck-faq-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 767px) {
+  .serv-deck-faq-item {
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .serv-deck-faq-item summary {
+    font-size: 16px;
+    padding: 16px 46px 16px 16px;
+    line-height: 1.5;
+  }
+
+  .serv-deck-faq-item summary::after {
+    width: 22px;
+    height: 22px;
+    right: 16px;
+    font-size: 16px;
+  }
+
+  .serv-deck-faq-content {
+    padding: 0 16px 16px 16px;
+  }
+
+  .serv-deck-faq-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .serv-deck-faq {
+    padding: 40px 12px;
+  }
+
+  .serv-deck-faq-item summary {
+    font-size: 15px;
+    padding: 14px 42px 14px 14px;
+  }
+
+  .serv-deck-faq-content {
+    padding: 0 14px 14px 14px;
+  }
+
+  .serv-deck-faq-content p {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+}
 </style>
 <body>
 
@@ -679,6 +840,106 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="serv-deck-button-wrap">
   <a href="/contact.html" class="serv-deck-button">SCHEDULE A FREE CONSULTATION ›</a>
 </div>
+
+      <!--===== FAQ START=======-->
+    <section class="serv-deck-faq">
+  <div class="serv-deck-faq-wrap">
+
+    <details class="serv-deck-faq-item" open>
+      <summary>What deck materials do you offer?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          We offer pressure-treated wood and composite decking options, along with railing systems and custom steps.
+          During your on-site consultation, we bring physical samples so you can compare color, texture, and durability in person.
+          As experienced deck builders, we help you choose materials based on maintenance preferences, budget, and long-term performance.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>How long does it take to build a deck?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Most deck projects take 1–3 weeks depending on size, design complexity, permits, weather, and material availability.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>Do you offer a free estimate?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Yes, we provide free estimates after understanding your project requirements and site conditions.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>Do you handle permits and inspections?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Yes, we can assist with permits, code requirements, and inspection coordination based on your local regulations.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>Can you build decks on weekends?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Weekend scheduling may be available depending on project timeline and team availability.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>How do you keep clients informed during the project?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          We provide regular updates through calls, messages, and on-site discussions so you always know the project status.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>How much will my deck renovation project cost?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Pricing depends on deck size, material choice, railings, stairs, demolition needs, and custom features.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>Why should I hire professional deck builders instead of doing it myself?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Professional builders ensure structural safety, proper permits, code compliance, durability, and a cleaner finish.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>How can a new deck improve my outdoor space?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          A new deck adds usable outdoor living space, improves home value, and creates a beautiful area for relaxing or entertaining.
+        </p>
+      </div>
+    </details>
+
+    <details class="serv-deck-faq-item">
+      <summary>Are you licensed and insured in New Jersey?</summary>
+      <div class="serv-deck-faq-content">
+        <p>
+          Yes, we operate with proper licensing and insurance for deck construction and renovation projects in New Jersey.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+      <!--===== FAQ END=======-->
 
 
 <!--===== FOOTER AREA STARTS =======-->

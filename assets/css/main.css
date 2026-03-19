@@ -25146,3 +25146,170 @@ img {
 	}
 }
 /*====================== END SUBMENU CSS ========================*/
+
+/*====================== faq css start ========================*/
+ .serv-deck-faq {
+    width: 90%;
+    margin: auto;
+    padding: 60px 20px;
+    background: #ffffff;
+  }
+
+  .serv-deck-faq-wrap {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .serv-deck-faq-item {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .serv-deck-faq-item:hover {
+    border-color: #dcdcdc;
+  }
+
+  .serv-deck-faq-item[open] {
+    border-color: #dcdcdc;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  }
+
+  .serv-deck-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 55px 20px 20px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111111;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+
+  .serv-deck-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .serv-deck-faq-item summary::marker {
+    display: none;
+  }
+
+  .serv-deck-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #666;
+    line-height: 1;
+    transition: all 0.3s ease;
+  }
+
+  .serv-deck-faq-item[open] summary::after {
+    content: "−";
+    color: #0d6efd;
+    border-color: #cfdfff;
+    background: #f5f9ff;
+  }
+
+  .serv-deck-faq-item[open] summary {
+    color: #0d6efd;
+  }
+
+  .serv-deck-faq-content {
+    padding: 0 20px 20px 20px;
+  }
+
+  .serv-deck-faq-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666666;
+    max-width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .serv-deck-faq {
+      padding: 50px 15px;
+    }
+
+    .serv-deck-faq-item summary {
+      font-size: 18px;
+      padding: 18px 50px 18px 18px;
+    }
+
+    .serv-deck-faq-content {
+      padding: 0 18px 18px 18px;
+    }
+
+    .serv-deck-faq-content p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .serv-deck-faq-item {
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .serv-deck-faq-item summary {
+      font-size: 16px;
+      padding: 16px 46px 16px 16px;
+      line-height: 1.5;
+    }
+
+    .serv-deck-faq-item summary::after {
+      width: 22px;
+      height: 22px;
+      right: 16px;
+      font-size: 16px;
+    }
+
+    .serv-deck-faq-content {
+      padding: 0 16px 16px 16px;
+    }
+
+    .serv-deck-faq-content p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .serv-deck-faq {
+      padding: 40px 12px;
+    }
+
+    .serv-deck-faq-item summary {
+      font-size: 15px;
+      padding: 14px 42px 14px 14px;
+    }
+
+    .serv-deck-faq-content {
+      padding: 0 14px 14px 14px;
+    }
+
+    .serv-deck-faq-content p {
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+  }
+
+
+/*====================== faq css end ========================*/

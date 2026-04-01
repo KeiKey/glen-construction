@@ -8309,12 +8309,26 @@ img {
   z-index: 1;
   overflow: hidden;
   background: #F2F2F2;
-  padding: 270px 0 32px;
+   padding: 50px 0 0px;
 }
 .vl-footer1-section-area .footer-logo-area {
   position: relative;
   z-index: 1;
 }
+
+ .vl-footer1-section-area .copyright-area a{
+    color:white;
+  }
+ .vl-footer1-section-area .copyright-area {
+
+    border-top: 1px solid #DBDBDB;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: black;
+    display: flex;
+    justify-content: center;
+}
+
 .vl-footer1-section-area .footer-logo-area img {
   width: 210px;
   height: 70px;

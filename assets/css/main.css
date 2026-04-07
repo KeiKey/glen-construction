@@ -25330,3 +25330,164 @@ img {
     font-weight: 700;
 }
 /*====================== faq css end ========================*/
+
+/* ===== GLENN BLOG POST ===== */
+
+.glenn-blog-post {
+  background: #f8fafc;
+}
+
+/* Container */
+.glenn-post-container {
+  margin: auto;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+/* Label */
+.glenn-blog-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Title */
+.glenn-post-title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* META */
+.glenn-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.glenn-meta-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.glenn-meta-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.glenn-meta-text .author {
+  font-weight: 600;
+  color: #111;
+}
+
+.glenn-meta-text .date {
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.glenn-meta-left img {
+  height: 28px;
+}
+
+
+/* RIGHT META (SOCIAL) */
+.glenn-meta-right {
+  display: flex;
+  gap: 12px;
+}
+
+.glenn-meta-right a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.glenn-meta-right a:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* IMAGE */
+.glenn-post-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* CTA */
+.glenn-cta-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+/* CONTENT */
+.glenn-post-content {
+  margin-top: 20px;
+}
+
+.glenn-post-content p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.glenn-post-content h2 {
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* FIX LIST STYLE INSIDE BLOG CONTENT */
+.glenn-post-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.glenn-post-content ul li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.glenn-post-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .glenn-post-title {
+    font-size: 28px;
+  }
+
+  .glenn-post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ===== GLENN BLOG POST CSS END ===== */

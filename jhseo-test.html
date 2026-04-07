@@ -119,11 +119,24 @@ document.addEventListener("DOMContentLoaded", function () {
 <style>
  .glen_area_wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+   grid-template-columns: repeat(3, 1fr); 
   gap: 24px;
   padding: 65px;
   font-family: system-ui, sans-serif;
   align-items: start;
+}
+
+  @media (max-width: 992px) {
+  .glen_area_wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 576px) {
+  .glen_area_wrap {
+    grid-template-columns: 1fr;
+  }
 }
 
 .glen_area_card {

@@ -14082,8 +14082,8 @@
   .fa-erlang:before {
     content: "\f39d"; }
   
-  .fa-x-twitter:before {
-    content: "\e61b"; }
+  .fa-twitter::before { 
+   content: "\e61b" !important; font-family: "Font Awesome 6 Brands";}
   
   .fa-cotton-bureau:before {
     content: "\f89e"; }

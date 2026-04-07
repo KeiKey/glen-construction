@@ -76,6 +76,32 @@
             }
         }
     </script>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cards = document.querySelectorAll(".glen_area_card");
+
+  cards.forEach(card => {
+    const header = card.querySelector(".glen_area_header");
+
+    header.addEventListener("click", () => {
+      const isActive = card.classList.contains("active");
+
+      cards.forEach(c => {
+        c.classList.remove("active");
+        c.querySelector(".glen_area_icon").textContent = "+";
+      });
+
+      if (!isActive) {
+        card.classList.add("active");
+        card.querySelector(".glen_area_icon").textContent = "−";
+      }
+    });
+
+  });
+
+});
+</script>
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -91,233 +117,94 @@
 </head>
 
 <style>
-  .glen-serv-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding-top: 100px;
-
-  }
-
-  .serv-deck-p {
-    max-width: 618px;
-  }
-
-  .vl-btn1 {
-    width: fit-content;
-  }
-
-  .glen-text-sec {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  @media (max-width: 1024px) {
-    .glen-serv-main {
-      padding-top: 70px;
-      gap: 40px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .glen-serv-main {
-      flex-direction: column;
-      padding-top: 50px;
-      gap: 30px;
-    }
-  }
-
-  @media(max-width:1439px) {
-    .glen-serv-main {
-      max-width: 85%;
-      margin: auto;
-
-    }
-  }
-
-  @media(max-width:769px) {
-    .glen-serv-main {
-      max-width: 90%;
-      margin: auto;
-
-    }
-  }
-
-
-
-  .serv-deck-why {
-    width: 90%;
-    max-width: 1200px;
-    margin: 80px auto;
-  }
-
-  .serv-deck-title {
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto 40px;
-    padding: 12px 25px;
-
-    text-align: center;
-  }
-
-  .serv-deck-title h2 {
-    margin: 0;
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.2;
-  }
-
-  .serv-deck-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .serv-deck-card {
-    background: #f8f8f8;
-    padding: 28px 24px;
-    border-radius: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .serv-deck-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  }
-
-  .serv-deck-img {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 18px;
-    border: 3px solid #0d6efd;
-    flex-shrink: 0;
-  }
-
-  .serv-deck-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .serv-deck-card h3 {
-    margin: 0 0 12px;
-    font-size: clamp(20px, 2.2vw, 24px);
-    line-height: 1.3;
-    color: #111;
-  }
-
-  .serv-deck-card p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #555;
-  }
-
-  @media (max-width: 991px) {
-    .serv-deck-why {
-      width: 92%;
-      margin: 60px auto;
-    }
-
-    .serv-deck-grid {
-      gap: 16px;
-    }
-
-    .serv-deck-card {
-      padding: 24px 20px;
-    }
-
-    .serv-deck-img {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 16px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .serv-deck-why {
-      width: 94%;
-      margin: 50px auto;
-    }
-
-    .serv-deck-title {
-      width: 100%;
-      padding: 12px 16px;
-      margin-bottom: 24px;
-    }
-
-    .serv-deck-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .serv-deck-card {
-      padding: 22px 18px;
-    }
-
-    .serv-deck-img {
-      width: 58px;
-      height: 58px;
-      margin-bottom: 14px;
-    }
-
-    .serv-deck-card p {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .serv-deck-title h2 {
-      font-size: 24px;
-    }
-
-    .serv-deck-card h3 {
-      font-size: 18px;
-    }
-
-    .serv-deck-card p {
-      font-size: 14px;
-    }
-  }
-
-  .serv-deck-button-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-  }
-
-  .serv-deck-button {
-    display: inline-block;
-    width: 335px;
-    max-width: 100%;
-    text-align: center;
-    background: #0d6efd;
-    color: #fff;
-    text-decoration: underline;
-    padding: 14px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    box-sizing: border-box;
-  }
-
- 
-
-  @media (max-width: 991px) {
-    .hero-inner-area {
-      padding: 160px 0 70px;
-    }
-  }
-  h1, h2, h3 {
-  color: #0F0D0D;
+ .glen_area_wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  align-items: start;
 }
 
+.glen_area_card {
+  background: #f5f5f5;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glen_area_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.glen_area_img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.glen_area_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.glen_area_icon {
+  font-size: 18px;
+  color: #0073ff;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.glen_area_content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 10px 16px 14px;
+  transform: translateY(-6px);
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.glen_area_card.active .glen_area_content {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glen_area_card.active .glen_area_icon {
+  transform: rotate(180deg);
+}
+
+/* ✅ FIXED ROW ALIGNMENT */
+.glen_area_content a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #0073ff;
+  text-decoration: none;
+  border-top: 1px solid #ddd;
+  transition: color 0.2s ease;
+}
+
+.glen_area_content a:first-child {
+  border-top: none;
+}
+
+.glen_area_content a:hover {
+  color: #0056cc;
+}
 
   
 </style>
@@ -487,351 +374,51 @@
     </div>
   </div>
   <!--===== HERO AREA ENDS =======-->
+<!--===== AREA  WE SERVE START =======-->
 
-  <!--===== service area left image start =======-->
-  <div class="glen-serv-main">
-    <div class="glen-img-sec">
-      <img src="/assets/img/all-images/service/Luxury-Outdoor-Deck-Solutions.webp" alt="">
+<div class="glen_area_wrap">
+  
+  <!-- CARD 1 -->
+  <div class="glen_area_card active">
+    <img src="https://www.pickleballlessons.com/images/fdf12b123c85121ead1d92229fb12652610ca6de.webp" class="glen_area_img">
+    <div class="glen_area_header">
+      <span>Location #1</span>
+      <span class="glen_area_icon">−</span>
     </div>
-
-    <div class="glen-text-sec">
-      <h2>
-        Luxury Outdoor <br> Deck Solutions
-      </h2>
-
-      <p class="serv-deck-p">
-        Step into luxurious outdoor living with Glen Construction’s bespoke deck solutions. As industry leaders in
-        construction, we specialize in crafting stunning decks that seamlessly blend functionality with style. Whether
-        you envision a spacious entertainment area, a cozy retreat, or a picturesque deck overlooking your landscape,
-        Glen Construction’s <a href="/about.html">skilled team</a> brings your vision to life with precision craftsmanship and top-quality
-        materials. From traditional wood decks to contemporary composite designs, we offer a diverse range of options to
-        suit your preferences and enhance the beauty of your outdoor space.
-      </p>
-
-      <a href="contact.html" class="vl-btn1">
-        <u>Schedule a FREE Consultation</u>
-        <i class="fa-solid fa-angle-right"></i>
-      </a>
-    </div>
-  </div>
-  <!--===== service area left image end =======-->
-
-  <!--===== service area right image start =======-->
-  <div class="glen-serv-main">
-    <div class="glen-text-sec">
-      <h2>
-        Custom Deck Design & Build
-      </h2>
-
-      <p class="serv-deck-p">
-        We start every project with an in-person site visit so we can evaluate the layout, elevation, drainage, and
-        overall structure of your yard. During that visit, we bring deck samples so you can see and feel material
-        options on the spot.
-      </p>
-
-      <p class="serv-deck-p">
-        We take measurements, discuss how you plan to use the space, and when helpful, create a 3D design so you can
-        visualize the final result before construction begins. Once the design is finalized, we send a clear, detailed
-        quote, typically within 1 to 2 days.
-      </p>
-
-      <p class="serv-deck-p">
-        We build with high-quality materials that hold up to New Jersey weather. Most decks can be completed in as
-        little as 2 to 3 days, with larger builds finished within two weeks. We work weekdays and weekends to keep your
-        project moving forward.
-      </p>
-
-      <a href="contact.html" class="vl-btn1">
-        <u>Schedule a FREE Consultation</u>
-        <i class="fa-solid fa-angle-right"></i>
-      </a>
-    </div>
-
-    <div class="glen-img-sec">
-      <img src="/assets/img/all-images/service/Custom-Deck-Design.webp" alt="">
-    </div>
-  </div>
-  <!--===== service area right image end =======-->
-
-  <!--===== slider area start =======-->
-
-  <div class="service-details-section sp1">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-8 m-auto">
-          <div class="service-main-detailsarea">
-            <div class="service-arrows">
-              <div class="service-slider-images">
-                <div class="img1">
-                  <img src="assets/img/wp/deck.png" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks1.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks2.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks4.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks12.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks8.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks10.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks11.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks6.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks13.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks14.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks7.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks15.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks9.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks16.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks17.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks5.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks19.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks20.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks21.jpeg" alt="">
-                </div>
-                <div class="img1">
-                  <img src="assets/img/wp/decks18.jpeg" alt="">
-                </div>
-              </div>
-              <div class="testimonial-arrows">
-                <div class="testimonial-prev-arrow-sinner">
-                  <button><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-                <div class="testimonial-next-arrow-sinner">
-                  <button><i class="fa-solid fa-angle-left"></i></button>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--===== slider area end=======-->
-
-  <!--===== tab area start=======-->
-  <div class="serv-deck-why">
-    <div class="serv-deck-title">
-      <h2>Why Choose Glen Construction<br>For Deck Builds</h2>
-    </div>
-
-    <div class="serv-deck-grid">
-      <div class="serv-deck-card">
-        <div class="serv-deck-img">
-          <img src="/assets/img/all-images/service/icon.webp" alt="Built for Real Life">
-        </div>
-        <h3>Built for Real Life</h3>
-        <p>
-          Your deck should match how you actually live. We design spaces for
-          entertaining, relaxing, grilling, or simply enjoying the outdoors.
-          Every layout focuses on flow, safety, and long-term use.
-        </p>
-      </div>
-
-      <div class="serv-deck-card">
-        <div class="serv-deck-img">
-          <img src="/assets/img/all-images/service/icon2.webp" alt="Strong, Code Compliant Construction">
-        </div>
-        <h3>Strong, Code Compliant Construction</h3>
-        <p>
-          We build decks that meet local building requirements and stand up to
-          daily wear. Proper footings, secure framing, and structural integrity
-          matter just as much as appearance.
-        </p>
-      </div>
-
-      <div class="serv-deck-card">
-        <div class="serv-deck-img">
-          <img src="/assets/img/all-images/service/icon3.webp" alt="Clean Job Sites and Clear Communication">
-        </div>
-        <h3>Clean Job Sites and Clear Communication</h3>
-        <p>
-          We respect your home and property. Our professional team keeps the work
-          area organized and communicates clearly from the first consultation to
-          the final walkthrough.
-        </p>
-      </div>
-
-      <div class="serv-deck-card">
-        <div class="serv-deck-img">
-          <img src="/assets/img/all-images/service/icon4.webp" alt="Fast Turnaround Without Cutting Corners">
-        </div>
-        <h3>Fast Turnaround Without Cutting Corners</h3>
-        <p>
-          Decks do not need to drag on for weeks. With experienced planning and
-          scheduling, many projects are completed in just a few days while
-          maintaining quality craftsmanship.
-        </p>
-      </div>
+    <div class="glen_area_content">
+      <a href="#"><span>Our Service</span><span>→</span></a>
+      <a href="#"><span>Our Service</span><span>→</span></a>
     </div>
   </div>
 
-
-
-
-
-  <!--===== tab area end=======-->
-  <div class="serv-deck-button-wrap">
-    <a href="/contact.html" class="serv-deck-button">SCHEDULE A FREE CONSULTATION ›</a>
+  <!-- CARD 2 -->
+  <div class="glen_area_card">
+    <img src="https://www.pickleballlessons.com/images/b8284e449e8bbda0736579849444b4bde916b4a3.webp" class="glen_area_img">
+    <div class="glen_area_header">
+      <span>Location #2</span>
+      <span class="glen_area_icon">+</span>
+    </div>
+    <div class="glen_area_content">
+      <a href="#"><span>Our Service</span><span>→</span></a>
+    </div>
   </div>
 
-  <!--===== FAQ START=======-->
-    <h2 class="serv-deck-h2" style="padding-top:100px;">Frequently Asked Questions</h2>
-  <section class="serv-deck-faq">
-    <div class="serv-deck-faq-wrap">
-
-      <details class="serv-deck-faq-item" open>
-        <summary>What deck materials do you offer?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-We offer pressure-treated wood and composite materials, along with railing systems and custom steps for your outdoor living space. During your on-site consultation, we bring physical samples so you can compare color, texture, and durability in person. As experienced and reliable deck builders, we help you choose materials based on maintenance preferences, budget, and long-term performance in New Jersey weather.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>How long does it take to build a deck?
-</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Most decks can be completed in as little as 2 to 3 days, with larger or more detailed projects finished within 12 to 14 days. Weather, size, and design details can affect the timeline, but we communicate clearly so everyone stays on the same page from start to finish.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Do you offer a free estimate?
-</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Yes. We begin with a free estimate that includes an in-person site visit. We measure the space, review layout options, show deck samples, and in some cases provide a 3D design so you can visualize the final result. After the design is finalized, we typically send a detailed written quote within 1 to 2 days.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Do you handle permits and inspections for decks in our outdoor living space?
-</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-If permits are required for your project, we guide you through the process and make sure the work meets local building codes. Proper planning up front helps avoid delays and keeps the deck project running smoothly from start to finish.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Can you build decks on weekends?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Yes. We schedule jobs on both weekdays and weekends when needed. Our goal is to complete your project efficiently while maintaining quality craftsmanship and providing you with your dream deck.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Can you help me narrow down deck ideas for my space?
-</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Yes. We can help you narrow down deck ideas based on your yard layout, your home’s style, how you want to use the space, and your budget.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>How do you keep clients informed during the project?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Clear communication is part of our process. We review the scope, timeline, and materials before work begins so everyone starts on the same page. We also provide updates throughout the deck build, so you can track progress and stay informed.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>How much will my deck renovation project cost?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-Pricing depends on size, materials, design details, and site conditions. Quotes are typically sent within 1 to 2 days after the on-site visit.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Why should I hire professional deck builders instead of doing it myself?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-          <a href="/"> Professional deck builders</a> understand structural framing, proper footings, railing safety, and local code requirements. A well-built deck is more than surface boards. It requires correct support and secure installation so it stays safe and durable for years. Hiring experienced professionals protects your investment and prevents costly mistakes.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>How can a new deck improve my outdoor space?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-            A well-designed deck transforms your outdoor space into a functional extension of your home. It creates room for entertaining, relaxing, grilling, or spending time with family. With the right layout and materials, your deck can increase usable square footage while improving comfort and property value.
-
-          </p>
-        </div>
-      </details>
-
-      <details class="serv-deck-faq-item">
-        <summary>Are you licensed and insured in New Jersey?</summary>
-        <div class="serv-deck-faq-content">
-          <p>
-           Yes. At <a href="/">Glen Construction</a>, we are fully registered to perform contracting services in New Jersey and carry a current certificate of insurance. Our team follows all state requirements and safety standards on every construction project, whether we are building decks, installing roofing, or completing pavers and retaining walls. 
-
-          </p>
-        </div>
-      </details>
-
+  <!-- CARD 3 -->
+  <div class="glen_area_card">
+    <img src="https://www.pickleballlessons.com/images/c7c208aeab444dbd8dfe87f0a8a00eda80d34d20.webp" class="glen_area_img">
+    <div class="glen_area_header">
+      <span>Location #3</span>
+      <span class="glen_area_icon">+</span>
     </div>
-  </section>
-  <!--===== FAQ END=======-->
+    <div class="glen_area_content">
+      <a href="#"><span>Our Service</span><span>→</span></a>
+    </div>
+  </div>
+
+</div>
+<!--===== AREA  WE SERVE START=======-->
+
+  
 
 
   <!--===== FOOTER AREA STARTS =======-->

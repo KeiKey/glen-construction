@@ -1,631 +1,270 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description"
+        content="Enhance your Bergen home with a custom deck built by Glen Construction LLC. Offering luxury deck design & construction with quality craftsmanship. Get a free consultation today!">
+    <title>Expert Deck Builders in Bergen, New Jersey | Glen Construction LLC</title>
+    <link rel="shortcut icon" href="assets/img/logo/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/aos.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
+    <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .glen_blog-wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
 
+        .glen_blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
 
-  <meta name="description"
-    content="Enhance your Bergen home with a custom deck built by Glen Construction LLC. Offering luxury deck design & construction with quality craftsmanship. Get a free consultation today!">
+        .glen_blog-item {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: glenFade .5s ease forwards;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: .3s;
+        }
 
-  <title>Expert Deck Builders in Bergen, New Jersey | Glen Construction LLC</title>
+        .glen_blog-item:hover {
+            transform: translateY(-6px)
+        }
 
-  <!--=====FAB ICON=======-->
-  <link rel="shortcut icon" href="assets/img/logo/logo1.png" type="image/x-icon">
+        .glen_blog-item:hover .glen_blog-img {
+            transform: scale(1.05)
+        }
 
-  <!--===== CSS LINK =======-->
-  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/aos.css">
-  <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
-  <link rel="stylesheet" href="assets/css/plugins/owlcarousel.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/sidebar.css">
-  <link rel="stylesheet" href="assets/css/plugins/slick-slider.css">
-  <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+        .glen_blog-img {
+            width: 260px;
+            min-height: 220px;
+            background: #eee;
+            flex-shrink: 0;
+            transition: .3s;
+            background-size: cover;
+            background-position: center;
+        }
 
-  <!--=====  JS SCRIPT LINK =======-->
-  <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
+        .glen_blog-content {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            flex: 1;
+        }
 
-  <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "GeneralContractor",
-            "name": "Glen Construction",
-            "image": "https://glenconstructionllc.com/assets/img/logo/logo1.png",
-            "@id": "",
-            "url": "https://glenconstructionllc.com",
-            "telephone": "+1 973 8836497",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "189 Harrison Ave",
-                "addressLocality": "Garfield",
-                "addressRegion": "NJ",
-                "postalCode": "07026",
-                "addressCountry": "US"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 40.872777,
-                "longitude": -74.099203
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59"
-            },
-            "sameAs": [
-                "https://www.instagram.com/glenconstructionllc/",
-                "https://www.facebook.com/p/Glen-Construction-Llc-61574778706397/",
-                "https://glenconstructionllc.com/"
-            ],
-            "department": {
-                "@type": "LocalBusiness",
-                "name": "",
-                "image": "",
-                "telephone": ""
+        .glen_blog-content h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .glen_blog-content p {
+            font-size: 14px;
+            opacity: .7;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .glen_blog-date {
+            font-size: 12px;
+            opacity: .6;
+            margin-bottom: 10px
+        }
+
+        .glen_blog-btn {
+            margin-top: auto;
+            padding: 8px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 13px;
+            text-decoration: none;
+            color: #000;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        .glen_blog-btn:hover {
+            background: #000;
+            color: #fff
+        }
+
+        .glen_blog-pagination {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .glen_blog-pagination button {
+            margin: 0 4px;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .glen_blog-pagination button.active {
+            background: #000;
+            color: #fff
+        }
+
+        .glen_blog-pagination button:hover {
+            background: #000;
+            color: #fff
+        }
+
+        @keyframes glenFade {
+            to {
+                opacity: 1;
+                transform: translateY(0)
             }
         }
-    </script>
 
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NM22ZMGV');</script>
-  <!-- End Google Tag Manager -->
+        /* ===== Tablet (YOU ASKED: 1 CARD) ===== */
+        @media (max-width: 991px) {
+            .glen_blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
+        /* ===== Mobile ===== */
+        @media (max-width: 600px) {
+            .glen_blog-item {
+                flex-direction: column;
+            }
+
+            .glen_blog-img {
+                width: 100%;
+                height: 220px;
+            }
+
+            .glen_blog-content {
+                padding: 14px;
+            }
+        }
+    </style>
 </head>
-
-<style>
-.glen_blog-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px
-}
-
-.glen_blog-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px
-}
-
-.glen_blog-item{
-  display:flex;
-  gap:20px;
-  align-items:stretch;
-  opacity:0;
-  transform:translateY(20px);
-  animation:glenFade .5s ease forwards;
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  transition:.3s
-}
-
-.glen_blog-item:hover{
-  transform:translateY(-6px)
-}
-
-.glen_blog-item:hover .glen_blog-img{
-  transform:scale(1.05)
-}
-
-.glen_blog-img{
-  width:260px;
-  min-height:220px;
-  background:#eee;
-  flex-shrink:0;
-  transition:.3s;
-  background-size:cover;
-  background-position:center
-}
-
-.glen_blog-content{
-  display:flex;
-  flex-direction:column;
-  padding:16px;
-  flex:1
-}
-
-.glen_blog-content h3{
-  margin-bottom:8px;
-  font-size:18px;
-  line-height:1.4
-}
-
-.glen_blog-content p{
-  font-size:14px;
-  opacity:.7;
-  margin-bottom:12px;
-  line-height:1.6;
-
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-
-.glen_blog-date{
-  font-size:12px;
-  opacity:.6;
-  margin-bottom:10px
-}
-
-.glen_blog-btn{
-  margin-top:auto;
-  padding:8px 14px;
-  border:1px solid #ccc;
-  border-radius:6px;
-  font-size:13px;
-  text-decoration:none;
-  color:#000;
-  display:inline-block;
-  transition:.3s
-}
-
-.glen_blog-btn:hover{
-  background:#000;
-  color:#fff
-}
-
-.glen_blog-pagination{
-  text-align:center;
-  padding-top:60px;
-}
-
-.glen_blog-pagination button{
-  margin:0 4px;
-  padding:6px 12px;
-  border:1px solid #ccc;
-  background:#fff;
-  border-radius:6px;
-  cursor:pointer;
-  transition:.3s
-}
-
-.glen_blog-pagination button.active{
-  background:#000;
-  color:#fff
-}
-
-.glen_blog-pagination button:hover{
-  background:#000;
-  color:#fff
-}
-
-@keyframes glenFade{
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* ===== Tablet (YOU ASKED: 1 CARD) ===== */
-@media(max-width:991px){
-  .glen_blog-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ===== Mobile ===== */
-@media(max-width:600px){
-  .glen_blog-item{
-    flex-direction:column;
-  }
-
-  .glen_blog-img{
-    width:100%;
-    height:220px;
-  }
-
-  .glen_blog-content{
-    padding:14px;
-  }
-}
-  .hero-inner-area {
-    padding: 160px 0 0;
-    padding-bottom: 70px;
-}
-</style>
 
 <body>
 
-  <!--===== PRELOADER STARTS =======-->
-  <div class="preloader">
-    <div class="loader"></div>
-  </div>
-  <!--===== PRELOADER ENDS =======-->
-
-  <!--===== PROGRESS STARTS=======-->
-  <div class="paginacontainer">
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
+    <div class="glen_blog-wrap">
+        <div id="glen_blog-list" class="glen_blog-grid"></div>
+        <div id="glen_blog-pagination" class="glen_blog-pagination"></div>
     </div>
-  </div>
-  <!--===== PROGRESS ENDS=======-->
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NM22ZMGV" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-  <!--=====HEADER START=======-->
-  <header class="homepage1-body">
-    <div id="vl-header-sticky" class="vl-header-area vl-transparent-header">
-      <div class="container">
-        <div class="row row-bg1 align-items-center">
-          <div class="col-xl-12">
-            <div class="header-top-area">
-              <div class="header-list">
-                <p>Best General Contractor in town! <a href="contact.html">Contact Us</a></p>
-              </div>
-              <ul>
-                <li><a href="mailto:glenconstructionllc23@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                      height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M2.92857 15.0714L7.57143 9.5M17.7857 15.0714L13.1429 9.5M2 5.78571L8.70893 10.2583C9.30461 10.6554 9.6024 10.854 9.92434 10.9311C10.2089 10.9994 10.5054 10.9994 10.7899 10.9311C11.1119 10.854 11.4097 10.6554 12.0054 10.2583L18.7143 5.78571M4.97143 16H15.7429C16.7829 16 17.303 16 17.7003 15.7976C18.0497 15.6196 18.3338 15.3354 18.5119 14.986C18.7143 14.5888 18.7143 14.0687 18.7143 13.0286V5.97143C18.7143 4.93134 18.7143 4.41128 18.5119 4.01402C18.3338 3.66457 18.0497 3.38046 17.7003 3.20252C17.303 3 16.7829 3 15.7429 3H4.97143C3.93134 3 3.41128 3 3.01402 3.20252C2.66457 3.38046 2.38046 3.66457 2.20252 4.01402C2 4.41128 2 4.93133 2 5.97143V13.0286C2 14.0687 2 14.5888 2.20252 14.986C2.38046 15.3354 2.66457 15.6196 3.01402 15.7976C3.41128 16 3.93133 16 4.97143 16Z"
-                        stroke="#1C293F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> glenconstructionllc23@gmail.com</a> <span> | </span></li>
+            let glen_postsData = [];
+            let glen_currentPage = 1;
+            const glen_perPage = 6;
 
-                <li>
-                  <a href="https://www.facebook.com/p/Glen-Construction-Llc-61574778706397/" target="_blank"
-                    class="social">
-                    <i class="fa-brands fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/glenconstructionllc/" target="_blank" class="social">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="space16 d-xl-block d-none"></div>
+            fetch('/posts.json')
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error ' + res.status);
+                    return res.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        if (!Array.isArray(data)) throw new Error('Invalid JSON');
 
-          <div class="col-xl-2 col-md-6 col-6">
-            <div class="vl-logo">
-              <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-xl-7 d-none d-xl-block">
-            <div class="vl-main-menu text-center">
-              <nav class="vl-mobile-menu-active navbar-ib">
-                <ul class="navbar-nav-ib">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" aria-expanded="false"
-                      href="service.html">Services</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="service-decks.html">Decks</a></li>
-                      <li><a class="dropdown-item" href="service-driveway.html">Driveway</a></li>
-                      <li><a class="dropdown-item" href="service-pavers.html">Pavers</a></li>
-                      <li><a class="dropdown-item" href="service-retaining-wall.html">Retaining walls</a></li>
-                      <li><a class="dropdown-item" href="service-roofing.html">Roofing</a></li>
-                      <li><a class="dropdown-item" href="service-steps.html">Steps</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="testimonial.html">Testimonials</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 col-6">
-            <div class="vl-hero-btn d-none d-xl-block text-end">
-              <div class="btn-area1">
-                <a href="tel:+19738836497"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M13.05 7C14.0268 7.19057 14.9244 7.66826 15.6281 8.37194C16.3318 9.07561 16.8095 9.97326 17 10.95M13.05 3C15.0793 3.22544 16.9716 4.13417 18.4163 5.57701C19.8609 7.01984 20.7721 8.91101 21 10.94M17.5 22C8.93959 22 2 15.0604 2 6.5C2 6.11378 2.01413 5.73086 2.04189 5.35173C2.07375 4.91662 2.08968 4.69907 2.2037 4.50103C2.29814 4.33701 2.4655 4.18146 2.63598 4.09925C2.84181 4 3.08188 4 3.56201 4H6.37932C6.78308 4 6.98496 4 7.15802 4.06645C7.31089 4.12515 7.44701 4.22049 7.55442 4.3441C7.67601 4.48403 7.745 4.67376 7.88299 5.05321L9.0491 8.26005C9.2096 8.70153 9.2899 8.92227 9.2763 9.1317C9.2643 9.31637 9.2012 9.49408 9.0942 9.64506C8.97286 9.81628 8.77145 9.93713 8.36863 10.1788L7 11C8.2019 13.6489 10.3501 15.7999 13 17L13.8212 15.6314C14.0629 15.2285 14.1837 15.0271 14.3549 14.9058C14.5059 14.7988 14.6836 14.7357 14.8683 14.7237C15.0777 14.7101 15.2985 14.7904 15.74 14.9509L18.9468 16.117C19.3262 16.255 19.516 16.324 19.6559 16.4456C19.7795 16.553 19.8749 16.6891 19.9335 16.842C20 17.015 20 17.2169 20 17.6207V20.438C20 20.9181 20 21.1582 19.9007 21.364C19.8185 21.5345 19.663 21.7019 19.499 21.7963C19.3009 21.9103 19.0834 21.9262 18.6483 21.9581C18.2691 21.9859 17.8862 22 17.5 22Z"
-                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg> +1 973 8836497</a>
-              </div>
-            </div>
-            <div class="vl-header-action-item d-block d-xl-none">
-              <button type="button" class="vl-offcanvas-toggle">
-                <i class="fa-solid fa-bars-staggered"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!--=====HEADER END =======-->
+                        // 🔥 SORT BY LATEST DATE FIRST
+                        glen_postsData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  <!--===== MOBILE HEADER STARTS =======-->
-  <div class="homepage1-body">
-    <div class="vl-offcanvas">
-      <div class="vl-offcanvas-wrapper">
-        <div class="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
-          <div class="vl-offcanvas-logo">
-            <a href="index.html"><img src="assets/img/logo/logo1.png" alt=""></a>
-          </div>
-          <div class="vl-offcanvas-close">
-            <button class="vl-offcanvas-close-toggle"><i class="fa-solid fa-xmark"></i></button>
-          </div>
-        </div>
+                        if (glen_postsData.length === 0) {
+                            document.getElementById('glen_blog-list').innerHTML = 'No blogs found';
+                            return;
+                        }
 
-        <div class="vl-offcanvas-menu d-xl-none mb-40">
-          <nav></nav>
-        </div>
+                        glen_renderBlogs();
+                        glen_renderPagination();
 
-        <div class="space20"></div>
-        <div class="vl-offcanvas-info">
-          <h3 class="vl-offcanvas-sm-title">Contacts</h3>
-          <div class="space20"></div>
-          <span><a href="tel:+19738836497"> <i class="fa-regular fa-envelope"></i> +1 973 8836497</a></span>
-          <span><a href="mailto:glenconstructionllc23@gmail.com"><i class="fa-solid fa-phone"></i>
-              glenconstructionllc23@gmail.com</a></span>
-          <span><a href="#"><i class="fa-solid fa-location-dot"></i> 189 harrison ave, Garfield, NJ, United States, New
-              Jersey</a></span>
-        </div>
-        <div class="space20"></div>
-        <div class="vl-offcanvas-social">
-          <h3 class="vl-offcanvas-sm-title">Follow Us</h3>
-          <div class="space20"></div>
-          <a href="https://www.facebook.com/p/Glen-Construction-Llc-61574778706397/" target="_blank"><i
-              class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/glenconstructionllc/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
+                    } catch (e) {
+                        document.getElementById('glen_blog-list').innerHTML = 'Invalid JSON format';
+                    }
+                })
+                .catch(() => {
+                    document.getElementById('glen_blog-list').innerHTML = 'Failed to load blogs';
+                });
 
-      </div>
-    </div>
-    <div class="vl-offcanvas-overlay"></div>
-  </div>
-  <!--===== MOBILE HEADER STARTS =======-->
+            function glen_renderBlogs() {
+                let start = (glen_currentPage - 1) * glen_perPage;
+                let end = start + glen_perPage;
+                let posts = glen_postsData.slice(start, end);
 
-  <!--===== HERO AREA STARTS =======-->
-  <div class="hero-inner-area"
-    style="background-image: url(assets/img/all-images/bg/hero-bg1.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-7">
-          <div class="inner-header">
-            <h1><strong>Blogs
-</strong></h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--===== HERO AREA ENDS =======-->
+                let output = '';
 
-  <!--===== blog area start =======-->
-  
-<div class="glen_blog-wrap">
-  <div id="glen_blog-list" class="glen_blog-grid"></div>
-  <div id="glen_blog-pagination" class="glen_blog-pagination"></div>
-</div>
-  <!--===== blog area start =======-->
+                posts.forEach((p, i) => {
+                    output += `
+                    <div class="glen_blog-item" style="animation-delay:${i*0.1}s">
+                        <div class="glen_blog-img" style="background-image:url('${p.image || ''}')"></div>
+                        <div class="glen_blog-content">
+                            <h3>${p.title || 'No Title'}</h3>
+                            <p>${p.excerpt || ''}</p>
+                            <div class="glen_blog-date">${p.date || ''}</div>
+                            <a href="${p.url || '#'}" class="glen_blog-btn">${p.button || 'Read More'}</a>
+                        </div>
+                    </div>`;
+                });
 
-  <!--===== FOOTER AREA STARTS =======-->
-  <div class="vl-footer1-section-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-3 col-md-6">
-          <div class="footer-logo-area">
-            <img src="assets/img/logo/logo1.png" alt="">
-            <div class="space16"></div>
-            <p>Your Local General Contractor 24/7 <br> Call Us today for a free quote!</p>
-            <div class="space24"></div>
-            <ul class="social-links">
-              <li><a href="https://www.facebook.com/p/Glen-Construction-Llc-61574778706397/" target="_blank"><i
-                    class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="https://www.instagram.com/glenconstructionllc/" target="_blank"><i
-                    class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
+                document.getElementById('glen_blog-list').innerHTML = output;
+            }
 
+            function glen_renderPagination() {
+                let totalPages = Math.ceil(glen_postsData.length / glen_perPage);
+                let btns = '';
 
-        <div class="col-xl col-md-6">
-          <div class="space30 d-xl-none d-block"></div>
-          <div class="footer-widget-area">
-            <h3>Contact Us</h3>
+                for (let i = 1; i <= totalPages; i++) {
+                    btns += `<button onclick="glen_goPage(${i})" class="${i === glen_currentPage ? 'active' : ''}">${i}</button>`;
+                }
 
-            <ul>
-              <li style="width:100%; overflow:hidden;">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638060.6073578977!2d-74.41150449999998!3d40.7183685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2ff256129e30b06b%3A0x34d7052d4c24b1a7!2sGlen%20Construction%20LLC!5e1!3m2!1sen!2sin!4v1774330368696!5m2!1sen!2sin"
-                  width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-              </li>
-              <li><a href="tel:+19738836497"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M14.05 6C15.0268 6.19057 15.9244 6.66826 16.6281 7.37194C17.3318 8.07561 17.8095 8.97326 18 9.95M14.05 2C16.0793 2.22544 17.9716 3.13417 19.4163 4.57701C20.8609 6.01984 21.7721 7.91101 22 9.94M18.5 21C9.93959 21 3 14.0604 3 5.5C3 5.11378 3.01413 4.73086 3.04189 4.35173C3.07375 3.91662 3.08968 3.69907 3.2037 3.50103C3.29814 3.33701 3.4655 3.18146 3.63598 3.09925C3.84181 3 4.08188 3 4.56201 3H7.37932C7.78308 3 7.98496 3 8.15802 3.06645C8.31089 3.12515 8.44701 3.22049 8.55442 3.3441C8.67601 3.48403 8.745 3.67376 8.88299 4.05321L10.0491 7.26005C10.2096 7.70153 10.2899 7.92227 10.2763 8.1317C10.2643 8.31637 10.2012 8.49408 10.0942 8.64506C9.97286 8.81628 9.77145 8.93713 9.36863 9.17882L8 10C9.2019 12.6489 11.3501 14.7999 14 16L14.8212 14.6314C15.0629 14.2285 15.1837 14.0271 15.3549 13.9058C15.5059 13.7988 15.6836 13.7357 15.8683 13.7237C16.0777 13.7101 16.2985 13.7904 16.74 13.9509L19.9468 15.117C20.3262 15.255 20.516 15.324 20.6559 15.4456C20.7795 15.553 20.8749 15.6891 20.9335 15.842C21 16.015 21 16.2169 21 16.6207V19.438C21 19.9181 21 20.1582 20.9007 20.364C20.8185 20.5345 20.663 20.7019 20.499 20.7963C20.3009 20.9103 20.0834 20.9262 19.6483 20.9581C19.2691 20.9859 18.8862 21 18.5 21Z"
-                      stroke="#31353D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg> +1 973 8836497</a></li>
-              <li><a target="_blank"
-                  href="https://www.google.com/maps/place/Glen+Construction+LLC/@40.7183685,-74.4115045,9z/data=!3m1!4b1!4m6!3m5!1s0x2ff256129e30b06b:0x34d7052d4c24b1a7!8m2!3d40.7183685!4d-74.4115045!16s%2Fg%2F11vzq3152b!5m1!1e4?entry=tts&g_ep=EgoyMDI2MDIxOC4wIPu8ASoASAFQAw%3D%3D&skid=b98db780-c2e2-4a14-86af-1c23943f61d4"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
-                      stroke="#31353D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
-                      stroke="#31353D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg> 189 Harrison Ave., Garfield, NJ, United States, New Jersey</a></li>
-              <li><a href="mailto:glenconstructionllc23@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M4 18L9 12M20 18L15 12M3 8L10.225 12.8166C10.8665 13.2443 11.1872 13.4582 11.5339 13.5412C11.8403 13.6147 12.1597 13.6147 12.4661 13.5412C12.8128 13.4582 13.1335 13.2443 13.775 12.8166L21 8M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z"
-                      stroke="#31353D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg> glenconstructionllc23@gmail.com</a></li>
-            </ul>
-          </div>
-        </div>
+                document.getElementById('glen_blog-pagination').innerHTML = btns;
+            }
 
+            window.glen_goPage = function (page) {
+                glen_currentPage = page;
+                glen_renderBlogs();
+                glen_renderPagination();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
 
-        <div class="col-xl col-md-6">
-          <div class="space30 d-xl-none d-block"></div>
-          <div class="footer-widget-area foot-padding1">
-            <h3>Top Links</h3>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="service.html">Services</a></li>
-              <li><a href="testimonial.html">Testimonials</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
+            window.glen_sort = function (type) {
+                if (type === 'latest') {
+                    glen_postsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+                } else {
+                    glen_postsData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                }
+                glen_currentPage = 1;
+                glen_renderBlogs();
+                glen_renderPagination();
+            }
 
-        <div class="col-xl col-md-6">
-          <div class="space30 d-xl-none d-block"></div>
-          <div class="footer-widget-area foot-padding2">
-            <h3>Our Services</h3>
-            <ul>
-              <li><a href="service-decks.html">Decks</a></li>
-              <li><a href="service-driveway.html">Driveway</a></li>
-              <li><a href="service-pavers.html">Pavers</a></li>
-              <li><a href="service-retaining-wall.html">Retaining walls</a></li>
-              <li><a href="service-roofing.html">Roofing</a></li>
-              <li><a href="service-steps.html">Steps</a></li>
-            </ul>
-          </div>
-        </div>
+        });
+    </script>
 
-
-      </div>
-      <div class="space48"></div>
-      <div class="col-xl-12">
-
-      </div>
-    </div>
-    <div class="copyright-area">
-      <a>Copyright © 2026 Glen Construction. All Rights Reserved</a>
-    </div>
-  </div>
-  <!--===== FOOTER AREA ENDS =======-->
-
-  <!--===== JS SCRIPT LINK =======-->
-  <script src="assets/js/plugins/bootstrap.min.js"></script>
-  <script src="assets/js/plugins/fontawesome.js"></script>
-  <script src="assets/js/plugins/aos.js"></script>
-  <script src="assets/js/plugins/counter.js"></script>
-  <script src="assets/js/plugins/SmoothScroll.js"></script>
-  <script src="assets/js/plugins/sidebar.js"></script>
-  <script src="assets/js/plugins/magnific-popup.js"></script>
-  <script src="assets/js/plugins/owlcarousel.min.js"></script>
-  <script src="assets/js/plugins/nice-select.js"></script>
-  <script src="assets/js/plugins/waypoints.js"></script>
-  <script src="assets/js/plugins/slick-slider.js"></script>
-  <script src="assets/js/main.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-
-let glen_postsData=[];
-let glen_currentPage=1;
-const glen_perPage=6;
-
-fetch('/posts.json')
-.then(res=>{
-  if(!res.ok) throw new Error('Network error '+res.status);
-  return res.text();
-})
-.then(text=>{
-  try{
-    const data=JSON.parse(text);
-    if(!Array.isArray(data)) throw new Error('Invalid JSON');
-
-    // 🔥 SORT BY LATEST DATE FIRST
-    glen_postsData=data.sort((a,b)=> new Date(b.date) - new Date(a.date));
-
-    if(glen_postsData.length===0){
-      document.getElementById('glen_blog-list').innerHTML='No blogs found';
-      return;
-    }
-
-    glen_renderBlogs();
-    glen_renderPagination();
-
-  }catch(e){
-    document.getElementById('glen_blog-list').innerHTML='Invalid JSON format';
-  }
-})
-.catch(()=>{
-  document.getElementById('glen_blog-list').innerHTML='Failed to load blogs';
-});
-
-function glen_renderBlogs(){
-  let start=(glen_currentPage-1)*glen_perPage;
-  let end=start+glen_perPage;
-  let posts=glen_postsData.slice(start,end);
-
-  let output='';
-
-  posts.forEach((p,i)=>{
-    output+=`
-    <div class="glen_blog-item" style="animation-delay:${i*0.1}s">
-      <div class="glen_blog-img" style="background-image:url('${p.image || ''}')"></div>
-      <div class="glen_blog-content">
-        <h3>${p.title || 'No Title'}</h3>
-        <p>${p.excerpt || ''}</p>
-        <div class="glen_blog-date">${p.date || ''}</div>
-        <a href="${p.url || '#'}" class="glen_blog-btn">${p.button || 'Read More'}</a>
-      </div>
-    </div>`;
-  });
-
-  document.getElementById('glen_blog-list').innerHTML=output;
-}
-
-function glen_renderPagination(){
-  let totalPages=Math.ceil(glen_postsData.length/glen_perPage);
-  let btns='';
-
-  for(let i=1;i<=totalPages;i++){
-    btns+=`<button onclick="glen_goPage(${i})" class="${i===glen_currentPage?'active':''}">${i}</button>`;
-  }
-
-  document.getElementById('glen_blog-pagination').innerHTML=btns;
-}
-
-window.glen_goPage=function(page){
-  glen_currentPage=page;
-  glen_renderBlogs();
-  glen_renderPagination();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// 🔥 OPTIONAL SORT FILTER (Latest / Oldest)
-window.glen_sort=function(type){
-  if(type==='latest'){
-    glen_postsData.sort((a,b)=> new Date(b.date)-new Date(a.date));
-  }else{
-    glen_postsData.sort((a,b)=> new Date(a.date)-new Date(b.date));
-  }
-  glen_currentPage=1;
-  glen_renderBlogs();
-  glen_renderPagination();
-}
-
-});
-</script>
 </body>
 
 </html>

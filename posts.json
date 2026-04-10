@@ -1,16 +1,16 @@
-
 [
   {
     "title": "Lorem ipsum",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "date": "23 Jan, 2023",
+    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
     "url": "blog1.html"
   },
   {
-    "title": "Lorem ipsum",
-    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "date": "23 Jan, 2023",
-    "url": "blog1.html"
+    "title": "Lorem ipsum 2",
+    "excerpt": "Second blog description goes here.",
+    "date": "25 Jan, 2023",
+    "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+    "url": "blog2.html"
   }
-  
 ]

@@ -534,18 +534,29 @@ let glen_currentPage=1;
 const glen_perPage=6;
 
 fetch('/posts.json')
-.then(res=>res.json())
-.then(data=>{
+.then(res=>{
+  if(!res.ok) throw new Error('Network error '+res.status);
+  return res.text();
+})
+.then(text=>{
+  try{
+    const data=JSON.parse(text);
+    if(!Array.isArray(data)) throw new Error('Invalid JSON');
 
-  if(!Array.isArray(data) || data.length===0){
-    document.getElementById('glen_blog-list').innerHTML='No blogs found';
-    return;
+    // 🔥 SORT BY LATEST DATE FIRST
+    glen_postsData=data.sort((a,b)=> new Date(b.date) - new Date(a.date));
+
+    if(glen_postsData.length===0){
+      document.getElementById('glen_blog-list').innerHTML='No blogs found';
+      return;
+    }
+
+    glen_renderBlogs();
+    glen_renderPagination();
+
+  }catch(e){
+    document.getElementById('glen_blog-list').innerHTML='Invalid JSON format';
   }
-
-  glen_postsData=data;
-  glen_renderBlogs();
-  glen_renderPagination();
-
 })
 .catch(()=>{
   document.getElementById('glen_blog-list').innerHTML='Failed to load blogs';
@@ -559,24 +570,15 @@ function glen_renderBlogs(){
   let output='';
 
   posts.forEach((p,i)=>{
-
-    let img = p.image ? p.image : 'https://via.placeholder.com/400x300';
-
     output+=`
     <div class="glen_blog-item" style="animation-delay:${i*0.1}s">
-      
-      <div class="glen_blog-img" style="background-image:url('${img}')"></div>
-      
+      <div class="glen_blog-img" style="background-image:url('${p.image || ''}')"></div>
       <div class="glen_blog-content">
         <h3>${p.title || 'No Title'}</h3>
         <p>${p.excerpt || ''}</p>
         <div class="glen_blog-date">${p.date || ''}</div>
-        
-        <a href="${p.url || '#'}" class="glen_blog-btn">
-          Read More
-        </a>
+        <a href="${p.url || '#'}" class="glen_blog-btn">${p.button || 'Read More'}</a>
       </div>
-
     </div>`;
   });
 
@@ -599,6 +601,18 @@ window.glen_goPage=function(page){
   glen_renderBlogs();
   glen_renderPagination();
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// 🔥 OPTIONAL SORT FILTER (Latest / Oldest)
+window.glen_sort=function(type){
+  if(type==='latest'){
+    glen_postsData.sort((a,b)=> new Date(b.date)-new Date(a.date));
+  }else{
+    glen_postsData.sort((a,b)=> new Date(a.date)-new Date(b.date));
+  }
+  glen_currentPage=1;
+  glen_renderBlogs();
+  glen_renderPagination();
 }
 
 });

@@ -502,28 +502,35 @@
   <script src="assets/js/plugins/slick-slider.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script>
-  let glen_postsData = [];
-  let glen_currentPage = 1;
-  const glen_perPage = 6;
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-  fetch('/posts.json')
-    .then(res => res.json())
-    .then(data => {
-      glen_postsData = data;
-      glen_renderBlogs();
-      glen_renderPagination();
-    });
+let glen_postsData = [];
+let glen_currentPage = 1;
+const glen_perPage = 6;
 
-  function glen_renderBlogs() {
-    let start = (glen_currentPage - 1) * glen_perPage;
-    let end = start + glen_perPage;
-    let posts = glen_postsData.slice(start, end);
+fetch('/posts.json')
+.then(res => {
+  console.log('STATUS:', res.status);
+  return res.json();
+})
+.then(data => {
+  console.log('DATA:', data);
+  glen_postsData = data;
+  glen_renderBlogs();
+  glen_renderPagination();
+})
+.catch(err => console.log('ERROR:', err));
 
-    let output = '';
-    posts.forEach((p, i) => {
-      output += `
-      <div class="glen_blog-item" style="animation-delay:${i * 0.1}s">
+function glen_renderBlogs(){
+  let start = (glen_currentPage - 1) * glen_perPage;
+  let end = start + glen_perPage;
+  let posts = glen_postsData.slice(start, end);
+
+  let output = '';
+  posts.forEach(p => {
+    output += `
+      <div class="glen_blog-item">
         <div class="glen_blog-img"></div>
         <div class="glen_blog-content">
           <h3>${p.title}</h3>
@@ -533,30 +540,30 @@
         </div>
       </div>
     `;
-    });
+  });
 
-    document.getElementById('glen_blog-list').innerHTML = output;
+  document.getElementById('glen_blog-list').innerHTML = output;
+}
+
+function glen_renderPagination(){
+  let totalPages = Math.ceil(glen_postsData.length / glen_perPage);
+  let btns = '';
+
+  for(let i=1;i<=totalPages;i++){
+    btns += `<button onclick="glen_goPage(${i})">${i}</button>`;
   }
 
-  function glen_renderPagination() {
-    let totalPages = Math.ceil(glen_postsData.length / glen_perPage);
-    let btns = '';
+  document.getElementById('glen_blog-pagination').innerHTML = btns;
+}
 
-    for (let i = 1; i <= totalPages; i++) {
-      btns += `<button onclick="glen_goPage(${i})" class="${i === glen_currentPage ? 'active' : ''}">${i}</button>`;
-    }
+window.glen_goPage = function(page){
+  glen_currentPage = page;
+  glen_renderBlogs();
+  glen_renderPagination();
+}
 
-    document.getElementById('glen_blog-pagination').innerHTML = btns;
-  }
-
-  function glen_goPage(page) {
-    glen_currentPage = page;
-    glen_renderBlogs();
-    glen_renderPagination();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+});
 </script>
-
 </body>
 
 </html>

@@ -507,7 +507,7 @@
   let glen_currentPage = 1;
   const glen_perPage = 6;
 
-  fetch('/posts.json')
+  fetch('posts.json')
     .then(res => res.json())
     .then(data => {
       glen_postsData = data;

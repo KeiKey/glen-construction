@@ -10,9 +10,9 @@
 
 
   <meta name="description"
-    content="Enhance your Bergen home with a custom deck built by Glen Construction LLC. Offering luxury deck design & construction with quality craftsmanship. Get a free consultation today!">
+    content="Stay updated with Glen Construction LLC’s blog for professional construction tips, project highlights, and expert insights on decks, driveways, roofing, pavers, retaining walls, and more. Trusted general contractor advice for homeowners in New Jersey.">
 
-  <title>Expert Deck Builders in Bergen, New Jersey | Glen Construction LLC</title>
+  <title>Expert Construction Tips & Project Insights | Glen Construction LLC</title>
 
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets/img/logo/logo1.png" type="image/x-icon">
@@ -552,8 +552,8 @@ fetch('/posts.json')
     const data=JSON.parse(text);
     if(!Array.isArray(data)) throw new Error('Invalid JSON');
 
-    // 🔥 SORT BY LATEST DATE FIRST
-    glen_postsData=data.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    // 🔥 SORT BY LATEST DATE FIRST (FIXED FOR DD-MM-YY / DD/MM/YY)
+    glen_postsData=data.sort((a,b)=> glen_parseDate(b.date) - glen_parseDate(a.date));
 
     if(glen_postsData.length===0){
       document.getElementById('glen_blog-list').innerHTML='No blogs found';
@@ -612,14 +612,30 @@ window.glen_goPage=function(page){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// 🔥 OPTIONAL SORT FILTER (Latest / Oldest)
-window.glen_sort=function(type){
-  if(type==='latest'){
-    glen_postsData.sort((a,b)=> new Date(b.date)-new Date(a.date));
-  }else{
-    glen_postsData.sort((a,b)=> new Date(a.date)-new Date(b.date));
+//  FIXED DATE PARSER (ONLY ONE FUNCTION)
+function glen_parseDate(dateStr){
+  if(!dateStr) return new Date(0);
+
+  const parts = dateStr.includes('-') ? dateStr.split('-') : dateStr.split('/');
+  
+  let day = parts[0];
+  let month = parts[1];
+  let year = parts[2];
+
+  year = year.length === 2 ? '20' + year : year;
+
+  return new Date(year, month - 1, day);
+}
+
+//  OPTIONAL SORT FILTER (Latest / Oldest)
+window.glen_sort = function(type){
+  if(type === 'latest'){
+    glen_postsData.sort((a,b)=> glen_parseDate(b.date) - glen_parseDate(a.date));
+  } else {
+    glen_postsData.sort((a,b)=> glen_parseDate(a.date) - glen_parseDate(b.date));
   }
-  glen_currentPage=1;
+
+  glen_currentPage = 1;
   glen_renderBlogs();
   glen_renderPagination();
 }

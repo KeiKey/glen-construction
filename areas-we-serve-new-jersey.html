@@ -595,13 +595,24 @@
   <script src="assets/js/plugins/waypoints.js"></script>
   <script src="assets/js/plugins/slick-slider.js"></script>
   <script src="assets/js/main.js"></script>
- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
 
     const tabs = document.querySelectorAll(".glen_tab");
     const cards = document.querySelectorAll(".glen_card");
     const heading = document.getElementById("glen_heading");
     const empty = document.getElementById("glen_empty");
+
+    // 👉 Map tab to URL
+    const links = {
+      "bergen": "/deck-builders-bergen.html",
+      "essex": "/deck-builders-essex.html",
+      "hudson": "/deck-builders-hudson.html",
+      "passaic": "/deck-builders-passaic-county.html",
+      "morris": "/deck-builders-morris-county.html",
+      "union": "/deck-builders-union-county.html",
+      "somerset": "/deck-builders-somerset-county.html"
+    };
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
@@ -613,7 +624,14 @@
         const selected = tab.getAttribute("data-tab");
         const text = tab.textContent.trim();
 
-        heading.textContent = text;
+        // 👉 Set heading as link
+        const url = links[selected];
+
+        if (url) {
+          heading.innerHTML = `<a href="${url}" class="glen_heading_link">${text}</a>`;
+        } else {
+          heading.textContent = text;
+        }
 
         let hasCard = false;
 

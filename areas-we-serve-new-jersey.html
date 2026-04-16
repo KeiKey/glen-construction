@@ -116,161 +116,142 @@
 </head>
 
 <style>
-  .glen_area_wrap {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 65px;
-    font-family: system-ui, sans-serif;
-    align-items: start;
-  }
-
-  @media (max-width: 992px) {
-    .glen_area_wrap {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .glen_area_wrap {
-
-      padding: 45px;
-    }
-
-    .hero-inner-area {
-      padding-bottom: 50px;
-    }
-  }
-
-
-  @media (max-width: 576px) {
-    .glen_area_wrap {
-      grid-template-columns: 1fr;
-    }
-
-    .glen_area_wrap {
-
-      padding: 25px;
-    }
-  }
-
-  .glen_area_card {
-    background: #f5f5f5;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .glen_area_card img {
-    width: 100%;
-  }
-
-  .glen_area_card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  }
-
-  .glen_area_img {
-    width: 100%;
-    height: auto;
-    display: block;
-    pointer-events: none;
-    user-select: none;
-  }
-
-
-  .glen_area_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .glen_area_icon {
-    font-size: 18px;
-    color: #0073ff;
-    transition: transform 0.3s ease;
-    display: inline-block;
-    width: 20px;
-    text-align: center;
-  }
-
-  .glen_area_content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    padding: 0 16px;
-    transform: translateY(-8px);
-    transition:
-      max-height 0.5s cubic-bezier(.4, 0, .2, 1),
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      padding 0.3s ease;
-  }
-
-  .glen_area_card.active .glen_area_content {
-    max-height: 300px;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .glen_area_card.active .glen_area_icon {
-    transform: rotate(180deg);
-  }
-
-  /* ✅ FIXED ROW ALIGNMENT */
-  .glen_area_content a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    font-size: 13px;
-    color: #0073ff;
-    text-decoration: none;
-    border-top: 1px solid #ddd;
-    transition: color 0.2s ease;
-  }
-
-  .glen_area_content a:first-child {
-    border-top: none;
-  }
-
-  .glen_area_content a:hover {
-    color: #0056cc;
-  }
-
-  /* ✅ TABS STYLE (NEW) */
-  .glen_tabs {
+.glen_area_main {
     display: flex;
     gap: 30px;
-    padding: 0 65px;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 15px;
-    padding-top:40px;
+    padding: 60px;
+  }
+
+  /* LEFT SIDEBAR */
+  .glen_sidebar {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .glen_tab {
+    padding: 14px 18px;
+    background: #f3f6fb;
+    border-radius: 10px;
     cursor: pointer;
-    padding-bottom: 6px;
-    position: relative;
-    color: #777;
+    font-weight: 500;
+    transition: 0.3s;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ARROW */
+  .glen_tab::after {
+    content: "→";
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .glen_tab:hover {
+    background: #e6efff;
+  }
+
+  .glen_tab:hover::after {
+    transform: translateX(5px);
   }
 
   .glen_tab.active {
-    color: #000;
+    background: #dbe9ff;
+    color: #0073ff;
   }
 
-  .glen_tab.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  /* RIGHT CONTENT */
+  .glen_content {
+    flex: 1;
+  }
+
+  #glen_heading {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  /* CARDS */
+  .glen_cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .glen_card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+  }
+
+  .glen_card img {
     width: 100%;
-    height: 2px;
-    background: #0073ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .glen_card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .glen_card a {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #e6efff;
+    border-radius: 8px;
+    color: #0073ff;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  /* HOVER */
+  .glen_card:hover {
+    transform: translateY(-5px);
+  }
+
+  /* EMPTY STATE */
+  #glen_empty {
+    padding: 40px;
+    text-align: center;
+    color: #777;
+  }
+
+  #glen_empty h3 {
+    font-size: 18px;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 992px) {
+
+    .glen_area_main {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .glen_sidebar {
+      width: 100%;
+      max-height: 180px;
+      /* 3 tabs visible */
+      overflow-y: auto;
+    }
+
+    .glen_sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .glen_sidebar::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    .glen_cards {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -441,61 +422,61 @@
   <!--===== HERO AREA ENDS =======-->
   <!--===== HERO AREA ENDS =======-->
 
-  <!-- ✅ TABS ADDED (NEW) -->
-  <div class="glen_tabs">
-    <span class="glen_tab active" data-tab="bergen">Bergen County</span>
-    <span class="glen_tab" data-tab="essex">Essex County</span>
-    <span class="glen_tab" data-tab="hudson">Hudson County</span>
-     <span class="glen_tab" data-tab="#">Passaic Count</span>
-    <span class="glen_tab" data-tab="#">Morris County</span>
-       <span class="glen_tab" data-tab="#">Union County</span>
-           <span class="glen_tab" data-tab="#">Somerset County</span>
+ <!-- ===== AREA SECTION START ===== -->
+
+<div class="glen_area_main">
+
+  <!-- LEFT TABS -->
+  <div class="glen_sidebar">
+    <div class="glen_tab active" data-tab="bergen">Bergen County</div>
+    <div class="glen_tab" data-tab="essex">Essex County</div>
+    <div class="glen_tab" data-tab="hudson">Hudson County</div>
+    <div class="glen_tab" data-tab="passaic">Passaic County</div>
+    <div class="glen_tab" data-tab="morris">Morris County</div>
+    <div class="glen_tab" data-tab="union">Union County</div>
+    <div class="glen_tab" data-tab="somerset">Somerset County</div>
   </div>
 
-  <!--===== AREA  WE SERVE START =======-->
+  <!-- RIGHT CONTENT -->
+  <div class="glen_content">
 
-  <div class="glen_area_wrap">
+    <h2 id="glen_heading">Bergen County</h2>
 
-    <!-- CARD 1 -->
-    <div class="glen_area_card active" data-county="bergen">
-      <img src="/assets/img/all-images/service/Garfield%2C%20NJ.webp">
-      <div class="glen_area_header">
-        <span>Garfield, New Jersey</span>
-        <span class="glen_area_icon">−</span>
+    <div class="glen_cards">
+
+      <!-- BERGEN -->
+      <div class="glen_card" data-county="bergen">
+        <img src="/assets/img/all-images/service/Garfield%2C%20NJ.webp">
+        <h3>Garfield, NJ</h3>
+        <a href="/deck-builders-garfield.html">Services →</a>
       </div>
-      <div class="glen_area_content">
-        <a href="/deck-builders-garfield.html"><span>Deck Builders</span><span>→</span></a>
+
+      <!-- ESSEX -->
+      <div class="glen_card" data-county="essex" style="display:none;">
+        <img src="/assets/img/all-images/service/Newark%2CNJ.webp">
+        <h3>Newark, NJ</h3>
+        <a href="/deck-builders-newark.html">Services →</a>
       </div>
+
+      <!-- HUDSON -->
+      <div class="glen_card" data-county="hudson" style="display:none;">
+        <img src="/assets/img/all-images/service/Jersey%20City%2CNJ.webp">
+        <h3>Jersey City, NJ</h3>
+        <a href="/deck-builders-jersey-city.html">Services →</a>
+      </div>
+
     </div>
 
-    <!-- CARD 2 -->
-    <div class="glen_area_card" data-county="essex" style="display:none;">
-      <img src="/assets/img/all-images/service/Newark%2CNJ.webp">
-      <div class="glen_area_header">
-        <span>Newark, New Jersey</span>
-        <span class="glen_area_icon">+</span>
-      </div>
-      <div class="glen_area_content">
-        <a href="/deck-builders-newark.html"><span>Deck Builders</span><span>→</span></a>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="glen_area_card" data-county="hudson" style="display:none;">
-      <img src="/assets/img/all-images/service/Jersey%20City%2CNJ.webp">
-      <div class="glen_area_header">
-        <span>Jersey City, New Jersey</span>
-        <span class="glen_area_icon">+</span>
-      </div>
-      <div class="glen_area_content">
-        <a href="/deck-builders-jersey-city.html"><span>Deck Builders</span><span>→</span></a>
-      </div>
+    <!-- EMPTY STATE -->
+    <div id="glen_empty" style="display:none;">
+      <h3>Services are coming soon</h3>
     </div>
 
   </div>
 
-  <!--===== AREA  WE SERVE END=======-->
+</div>
 
+<!-- ===== AREA SECTION END ===== -->
 
 
 
@@ -614,34 +595,49 @@
   <script src="assets/js/plugins/waypoints.js"></script>
   <script src="assets/js/plugins/slick-slider.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
 
-      const tabs = document.querySelectorAll(".glen_tab");
-      const cards = document.querySelectorAll(".glen_area_card");
+    const tabs = document.querySelectorAll(".glen_tab");
+    const cards = document.querySelectorAll(".glen_card");
+    const heading = document.getElementById("glen_heading");
+    const empty = document.getElementById("glen_empty");
 
-      tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
 
-          tabs.forEach(t => t.classList.remove("active"));
-          tab.classList.add("active");
+        // Active tab
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
 
-          const selected = tab.getAttribute("data-tab");
+        const selected = tab.getAttribute("data-tab");
+        const text = tab.textContent.trim();
 
-          cards.forEach(card => {
-            if (card.getAttribute("data-county") === selected) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
+        heading.textContent = text;
 
+        let hasCard = false;
+
+        cards.forEach(card => {
+          if (card.getAttribute("data-county") === selected) {
+            card.style.display = "block";
+            hasCard = true;
+          } else {
+            card.style.display = "none";
+          }
         });
+
+        // Show empty state if no cards
+        if (hasCard) {
+          empty.style.display = "none";
+        } else {
+          empty.style.display = "block";
+        }
+
       });
-
     });
-  </script>
 
+  });
+</script>
 </body>
 
 </html>

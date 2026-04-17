@@ -833,6 +833,20 @@ $(window).on('load', function(event) {
 
 
 
+ const redirects = {
+   
+    "/jhseo-test.html": "/jhseo-staging.html"
+  };
+
+  const path = window.location.pathname;
+
+  if (redirects[path]) {
+    window.location.replace(redirects[path]);
+  }
+
+
+
+
 
 
 

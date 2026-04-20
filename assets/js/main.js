@@ -833,21 +833,19 @@ $(window).on('load', function(event) {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
   const redirects = {
     "/jhseo-test.html": "/jhseo-staging.html",
     "/service-driveway.html": "/driveway-contractor-new-jersey.html",
   };
 
-  const path = window.location.pathname;
+  // Get path, remove trailing slash, and convert to lowercase
+  const path = window.location.pathname.replace(/\/$/, "").toLowerCase();
 
   if (redirects[path]) {
     window.location.replace(redirects[path]);
   }
-});
-
-
-
+})();
 
 
 

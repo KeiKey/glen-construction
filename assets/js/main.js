@@ -835,8 +835,9 @@ $(window).on('load', function(event) {
 
 (function () {
   const redirects = {
-    "/jhseo-test.html": "/jhseo-staging.html",
     "/service-driveway.html": "/driveway-contractor-new-jersey.html",
+    "/jhseo-test.html": "/jhseo-staging.html",
+   
   };
 
   // Get path, remove trailing slash, and convert to lowercase

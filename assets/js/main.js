@@ -836,7 +836,7 @@ $(window).on('load', function(event) {
 (function () {
   const redirects = {
     "/service-driveway.html": "/driveway-contractor-new-jersey.html",
-      "service-decks.html": "/deck-builders-new-jersey.html",
+      "/service-decks.html": "/deck-builders-new-jersey.html",
     
     "/jhseo-test.html": "/jhseo-staging.html",
    

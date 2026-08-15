@@ -1,47 +1,168 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
-<url>
-<loc>https://glenconstructionllc.com/</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/contact.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/about.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/testimonial.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-decks.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-pavers.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-steps.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-driveway.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-retaining-wall.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
-<url>
-<loc>https://glenconstructionllc.com/service-roofing.html</loc>
-<lastmod>2026-02-20T12:59:26+00:00</lastmod>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://glenconstructionllc.com/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/about.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/service.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/contact.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/testimonial.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Service pages -->
+  <url>
+    <loc>https://glenconstructionllc.com/service-decks.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/driveway-contractor-new-jersey.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/service-pavers.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/service-steps.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/service-retaining-wall.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/service-roofing.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Local / service-area landing pages -->
+  <url>
+    <loc>https://glenconstructionllc.com/areas-we-serve-new-jersey.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-new-jersey.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-garfield.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-bergen.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-passaic-county.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-essex.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-hudson.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-jersey-city.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-newark.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-morris-county.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-union-county.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/deck-builders-somerset-county.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://glenconstructionllc.com/blogs.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/blogs/what-to-look-for-deck-builders.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://glenconstructionllc.com/blogs/why-hiring-a-professional-deck-builder.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

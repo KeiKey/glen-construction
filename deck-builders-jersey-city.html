@@ -159,6 +159,21 @@
     })(window, document, 'script', 'dataLayer', 'GTM-NM22ZMGV');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Google tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18392061464"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18392061464');
+  </script>
+  <!-- Google Ads phone-call conversion: fires when a tel: link is clicked (delegated, catches dynamic links) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      if (t) { gtag('event', 'conversion', { 'send_to': 'AW-18392061464/w5jKCNPP4-IcEJisgsJE' }); }
+    });
+  </script>
 </head>
 
 <style>

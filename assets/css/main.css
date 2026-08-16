@@ -25491,3 +25491,11 @@ img {
 }
 
 /* ===== GLENN BLOG POST CSS END ===== */
+
+/* Accessibility: ensure sufficient contrast for footer copyright + rating badge
+   on the light (#F2F2F2) footer background (overrides a stray color:white rule) */
+.vl-footer1-section-area .copyright-area,
+.vl-footer1-section-area .copyright-area a,
+.vl-footer1-section-area .google-rating-badge a {
+  color: #333333;
+}

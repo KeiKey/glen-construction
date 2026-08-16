@@ -64,7 +64,7 @@ Location:
        CASE STUDY CSS
 
 **********************************************/
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+/* Font moved to a preconnected <link> in each page <head> to avoid a render-blocking @import chain */
 a, a:hover {
   text-decoration: none;
 }
